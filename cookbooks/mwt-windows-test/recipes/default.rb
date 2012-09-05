@@ -7,4 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
+rightscale_marker :begin
 log "Bahaha, hello from Windows and RubyMine! Because this is a billion times better than just SSH and vi, fool!"
+rightscale_marker :end
