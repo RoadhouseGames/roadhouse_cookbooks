@@ -1,30 +1,30 @@
 {
-  "recipes": {
-    "mwt-test::default": "Prints hello world output"
-  },
-  "maintainer_email": "YOUR_EMAIL",
-  "maintainer": "YOUR_COMPANY_NAME",
   "name": "mwt-test",
-  "providing": {
-  },
-  "groupings": {
-  },
-  "replacing": {
-  },
-  "conflicting": {
-  },
-  "suggestions": {
-  },
+  "description": "Installs/Configures mwt-test",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "maintainer": "YOUR_COMPANY_NAME",
+  "maintainer_email": "YOUR_EMAIL",
+  "license": "All rights reserved",
   "platforms": {
   },
   "dependencies": {
   },
-  "license": "All rights reserved",
-  "attributes": {
-  },
   "recommendations": {
   },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "version": "0.0.1",
-  "description": "Installs/Configures mwt-test"
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "mwt-test::default": "Prints hello world output"
+  },
+  "version": "0.0.1"
 }
