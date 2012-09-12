@@ -23,7 +23,7 @@ template "/etc/ejabberd/ejabberd.cfg" do
   mode "0644"
   group "root"
   owner "root"
-  cookbook 'app_jabber'
+  cookbook "app_jabber"
   variables(
       :host => node[:app_jabber][:host_name],
       :fqdn => node[:app_jabber][:db_fqdn],

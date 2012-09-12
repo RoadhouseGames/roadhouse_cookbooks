@@ -21,7 +21,7 @@ attribute "app_jabber/db_fqdn",
           :required => "required",
           :recipes => ["app_jabber::default"]
 
-attribute "app_jabber/db_username",
+attribute "app_jabber/db_user",
           :display_name => "Database User Name",
           :description => "The user account to use when connecting to the database",
           :required => "required",

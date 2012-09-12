@@ -48,7 +48,7 @@
       "calculated": false,
       "type": "string"
     },
-    "app_jabber/db_username": {
+    "app_jabber/db_user": {
       "display_name": "Database User Name",
       "description": "The user account to use when connecting to the database",
       "required": "required",
