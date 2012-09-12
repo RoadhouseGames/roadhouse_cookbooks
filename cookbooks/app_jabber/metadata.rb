@@ -44,4 +44,4 @@ attribute "app_jabber/host_name",
           :display_name => "Jabber Host Name",
           :description => "The host name served by the jabber server. Example: jabber.mywebsite.com",
           :required => "required",
-          :recipes => ["app_jabber:default"]
+          :recipes => ["app_jabber::default"]
