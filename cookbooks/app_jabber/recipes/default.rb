@@ -39,8 +39,6 @@ end
 log "  Create ejabberd-modules directory"
 destination_dir = "/opt/ejabberd-modules"
 directory destination_dir do
-  owner "root"
-  group "root"
   mode "0755"
   action :create
 end
@@ -50,8 +48,6 @@ destination_dir += "/mysql"
 subversion destination_dir do
   repository "http://svn.process-one.net/ejabberd-modules/mysql/trunk/"
   revision "HEAD"
-  user "root"
-  group "root"
   action :checkout
 end
 
