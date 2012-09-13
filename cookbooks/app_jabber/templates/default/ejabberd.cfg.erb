@@ -88,7 +88,7 @@ override_acls.
 %% You can define one or several, for example:
 %% {hosts, ["example.net", "example.com", "example.org"]}.
 %%
-{hosts, ["<%= @host %>"]}.
+{hosts, ["<%= @host %>","<%= public_ipv4 %>","<%= private_ipv4 %>"]}.
 
 %%
 %% route_subdomains: Delegate subdomains to other XMPP servers.

@@ -7,6 +7,7 @@ version          "0.0.1"
 
 depends "app"
 depends "db"
+depends "sys_firewall"
 depends "rightscale"
 
 recipe "app_jabber::default", "Installs the Jabber chat server."
