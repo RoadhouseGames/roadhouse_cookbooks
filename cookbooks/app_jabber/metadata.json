@@ -6,11 +6,11 @@
   "maintainer_email": "dgagnon@roadhouseinteractive.com",
   "license": "All rights reserved",
   "platforms": {
+    "centos": "~> 5.8"
   },
   "dependencies": {
     "app": ">= 0.0.0",
     "db": ">= 0.0.0",
-    "sys_firewall": ">= 0.0.0",
     "rightscale": ">= 0.0.0"
   },
   "recommendations": {
