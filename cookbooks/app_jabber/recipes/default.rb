@@ -37,7 +37,7 @@ template "/etc/ejabberd/ejabberd.cfg" do
 end
 
 log "  Create ejabberd-modules directory"
-destination_dir = "/opt/ejabberd-modules/mysql"
+destination_dir = "/opt/ejabberd-modules"
 directory destination_dir do
   owner "root"
   group "root"
@@ -46,6 +46,7 @@ directory destination_dir do
 end
 
 log "  Checkout ejabberd mysql modules"
+destination_dir += "/mysql"
 subversion destination_dir do
   repository "http://svn.process-one.net/ejabberd-modules/mysql/trunk/"
   revision "HEAD"
