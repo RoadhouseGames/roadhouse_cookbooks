@@ -36,17 +36,27 @@ template "/etc/ejabberd/ejabberd.cfg" do
   )
 end
 
+log "  Create ejabberd-modules directory"
+destination_dir = "/opt/ejabberd-modules/mysql"
+directory destination_dir do
+  owner "root"
+  group "root"
+  mode "0755"
+  action :create
+end
+
 log "  Checkout ejabberd mysql modules"
-subversion "ejabberd-modules-mysql" do
+subversion destination_dir do
   repository "http://svn.process-one.net/ejabberd-modules/mysql/trunk/"
-  destination "/opt/ejabberd-modules/mysql/"
   revision "HEAD"
+  user "root"
+  group "root"
   action :checkout
 end
 
 log "  Build and install ejabberd mysql module"
 bash "install_ejabberd-modules_mysql" do
-  cwd "/opt/ejabberd-modules/mysql/"
+  cwd destination_dir
   code <<-EOH
     echo "======= Building ejabberd-modules/mysql ======="
     ./build.sh
