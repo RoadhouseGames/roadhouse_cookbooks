@@ -7,7 +7,7 @@ version          "0.0.1"
 
 supports "centos", "~> 5.8"
 
-#depends "sys_firewall"
+depends "sys_firewall"
 depends "app"
 depends "db"
 depends "rightscale"

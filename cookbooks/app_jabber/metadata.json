@@ -9,6 +9,7 @@
     "centos": "~> 5.8"
   },
   "dependencies": {
+    "sys_firewall": ">= 0.0.0",
     "app": ">= 0.0.0",
     "db": ">= 0.0.0",
     "rightscale": ">= 0.0.0"
