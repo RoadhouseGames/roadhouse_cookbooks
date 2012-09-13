@@ -36,25 +36,25 @@ template "/etc/ejabberd/ejabberd.cfg" do
   )
 end
 
-log "  Checkout ejabberd mysql modules"
-subversion "ejabberd-modules-mysql" do
-  repository "http://svn.process-one.net/ejabberd-modules/mysql/trunk/"
-  destination "/opt/ejabberd-modules/mysql"
-  revision "HEAD"
-  action :checkout
-end
-
-log "  Build and install ejabberd mysql module"
-bash "install_ejabberd-modules_mysql" do
-  cwd "/opt/ejabberd-modules/mysql"
-  code <<-EOH
-    echo "======= Building ejabberd-modules/mysql ======="
-    ./build.sh
-    echo "======= Copying built modules ======="
-    cp -f ./ebin/*.beam /usr/lib64/ejabberd/ebin/
-    echo "======= ejabberd-modules/mysql script COMPLETE ======="
-  EOH
-end
+#log "  Checkout ejabberd mysql modules"
+#subversion "ejabberd-modules-mysql" do
+#  repository "http://svn.process-one.net/ejabberd-modules/mysql/trunk/"
+#  destination "/opt/ejabberd-modules/mysql/"
+#  revision "HEAD"
+#  action :checkout
+#end
+#
+#log "  Build and install ejabberd mysql module"
+#bash "install_ejabberd-modules_mysql" do
+#  cwd "/opt/ejabberd-modules/mysql/"
+#  code <<-EOH
+#    echo "======= Building ejabberd-modules/mysql ======="
+#    ./build.sh
+#    echo "======= Copying built modules ======="
+#    cp -f ./ebin/*.beam /usr/lib64/ejabberd/ebin/
+#    echo "======= ejabberd-modules/mysql script COMPLETE ======="
+#  EOH
+#end
 
 log "  Open required ports in the firewall (Security Group keeps security tight!)"
 sys_firewall "Open port 5222 for client connections" do
