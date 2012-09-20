@@ -43,23 +43,19 @@ directory destination_dir do
   action :create
 end
 
-log "  Checkout ejabberd mysql modules"
-destination_dir += "/mysql"
-subversion destination_dir do
-  repository "http://svn.process-one.net/ejabberd-modules/mysql/trunk/"
-  revision "HEAD"
-  action :checkout
+log "  Copy over mysql-modules.tgz file from cookbook"
+cookbook_file "/tmp/mysql-modules.tgz" do
+  source "mysql-modules.tgz"
+  mode "0644"
+  cookbook "app_jabber"
 end
 
-log "  Build and install ejabberd mysql module"
 bash "install_ejabberd-modules_mysql" do
   cwd destination_dir
   code <<-EOH
-    echo "======= Building ejabberd-modules/mysql ======="
-    ./build.sh
-    echo "======= Copying built modules ======="
-    cp -f ./ebin/*.beam /usr/lib64/ejabberd/ebin/
-    echo "======= ejabberd-modules/mysql script COMPLETE ======="
+    echo "======= Extracting ejabberd mysql-modules.tgz ======="
+    tar xzf /tmp/mysql-modules.tgz -C /usr/lib64/ejabberd/ebin/
+    echo "======= Complete ======="
   EOH
 end
 
