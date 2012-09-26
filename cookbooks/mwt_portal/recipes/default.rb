@@ -33,6 +33,15 @@ bash "configure_web_portal_folders"
   EOH
 end
 
+log "  Restarting httpd"
+
+bash "restart httpd"
+  code <<-EOH
+    /sbin/service httpd restart
+  EOH
+EOH
+end
+
 log "  Configuring application.php file"
 
 rightscale_marker :end
