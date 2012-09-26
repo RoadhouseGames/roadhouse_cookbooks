@@ -39,7 +39,6 @@ bash "restart httpd" do
   code <<-EOH
     /sbin/service httpd restart
   EOH
-EOH
 end
 
 log "  Configuring application.php file"
