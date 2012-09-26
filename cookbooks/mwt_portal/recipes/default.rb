@@ -26,7 +26,7 @@ end
 
 log "  Executing MW Tactics Web Portal Initialization Script"
 
-bash "configure_web_portal_folders"
+bash "configure_web_portal_folders" do
   cwd SERVICES_FOLDER
   code <<-EOH
     bash init.sh
@@ -35,7 +35,7 @@ end
 
 log "  Restarting httpd"
 
-bash "restart httpd"
+bash "restart httpd" do
   code <<-EOH
     /sbin/service httpd restart
   EOH
