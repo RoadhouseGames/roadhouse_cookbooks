@@ -222,7 +222,7 @@ attribute "mwt_portal/playspan_user_account_prefix",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_catalog",
-          :display_name => "Playspan ID",
+          :display_name => "Playspan Catalog ID",
           :description => "The Playspan catalog ID.  Example: 'cred:PLAYSPAN_CATALOG_ID'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
