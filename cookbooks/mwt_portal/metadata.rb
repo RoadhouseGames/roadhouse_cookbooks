@@ -65,7 +65,8 @@ attribute "mwt_portal/game_shared_secret",
 attribute "mwt_portal/memcache_hostname",
           :display_name => "Memcache Hostname",
           :description => "The Memcache server short hostname. Example: 'memcache'.",
-          :required => "required",
+          :required => "recommended",
+          :default => "memcache",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/memcache_port",
@@ -229,7 +230,7 @@ attribute "mwt_portal/playspan_upay_lightbox",
 
 attribute "mwt_portal/playspan_featured_sub",
           :display_name => "Playspan Featured Subscription",
-          :description => "Playspan featured subscription.",
+          :description => "Playspan featured subscription.  Example: 'testsub001'",
           :required => "recommended",
           :default => "testsub001",
           :recipes => ["mwt_portal::default"]

@@ -133,7 +133,8 @@
     "mwt_portal/memcache_hostname": {
       "display_name": "Memcache Hostname",
       "description": "The Memcache server short hostname. Example: 'memcache'.",
-      "required": "required",
+      "required": "recommended",
+      "default": "memcache",
       "recipes": [
         "mwt_portal::default"
       ],
@@ -479,7 +480,7 @@
     },
     "mwt_portal/playspan_featured_sub": {
       "display_name": "Playspan Featured Subscription",
-      "description": "Playspan featured subscription.",
+      "description": "Playspan featured subscription.  Example: 'testsub001'",
       "required": "recommended",
       "default": "testsub001",
       "recipes": [
