@@ -134,8 +134,8 @@ template "#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php" do
       :portal_hostname => node[:mwt_portal][:portal_hostname],
       :db_forum_fqdn => node[:db][:dns][:master][:fqdn],
       :db_forum_schema_name => node[:mwt_portal][:db_forum_schema_name],
-      :db_forum_user => node[:mwt_portal][:db_forum_user],
-      :db_forum_password => node[:mwt_portal][:db_forum_password]
+      :db_forum_user => node[:db][:application][:user],
+      :db_forum_password => node[:db][:application][:password]
   )
 end
 

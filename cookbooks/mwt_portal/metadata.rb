@@ -69,18 +69,6 @@ attribute "mwt_portal/db_forum_schema_name",
           :default => "mwt_ipb",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/db_forum_user",
-          :display_name => "Forum Database User Account",
-          :description => "The Forum database account.  Example 'cred:DBAPPLICATION_USER'.",
-          :required => "required",
-          :recipes => ["mwt_portal::default"]
-
-attribute "mwt_portal/db_forum_password",
-          :display_name => "Forum Database User Password",
-          :description => "The Forum database account password.  Example: 'cred:DBAPPLICATION_PASSWORD'.",
-          :required => "required",
-          :recipes => ["mwt_portal::default"]
-
 attribute "mwt_portal/email_contact_account",
           :display_name => "Email Contact Account",
           :description => "The contact email address for the portal. Example: 'vibrant-sysadmin@vibrant-software.com'.",
