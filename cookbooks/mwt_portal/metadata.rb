@@ -81,27 +81,27 @@ attribute "mwt_portal/db_forum_password",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/contact_email",
+attribute "mwt_portal/email_contact_account",
           :display_name => "Email Contact Account",
           :description => "The contact email address for the portal. Example: 'vibrant-sysadmin@vibrant-software.com'.",
           :required => "recommended",
           :default => "vibrant-sysadmin@vibrant-software.com",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/sender_email",
+attribute "mwt_portal/email_sender_account",
           :display_name => "EMail Sender Account",
           :description => "The sender email address for the portal. Example: 'noreply@mwtactics.com'.",
           :required => "recommended",
           :default => "noreply@mwtactics.com",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/smtp_user",
+attribute "mwt_portal/email_smtp_user",
           :display_name => "EMail SMTP Account",
           :description => "The SMTP account for the portal.  Example 'cred:EMAIL_SMTP_USER'",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/smtp_password",
+attribute "mwt_portal/email_smtp_password",
           :display_name => "EMail SMTP Password",
           :description => "The SMTP password for the portal.  Example 'cred:EMAIL_SMTP_PASSWORD'",
           :required => "required",
@@ -137,26 +137,26 @@ attribute "mwt_portal/aws_secret_key",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_fqdn",
+attribute "mwt_portal/cdn_asset_fqdn",
           :display_name => "CDN Asset Fully Qualified Domain Name",
           :description => "The CDN host fully qualified domain name. Example: 'cdn.mwtactics.com'.",
           :required => "recommended",
           :default => "cdn.mwtactics.com",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_user",
+attribute "mwt_portal/cdn_asset_user_account",
           :display_name => "CDN Asset User Account",
           :description => "The CDN user account.  Example: 'cred:CDN_ASSET_USER'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_password",
+attribute "mwt_portal/cdn_asset_user_password",
           :display_name => "CDN Asset User Password",
           :description => "The CDN user account password.  Example: 'cred:CDN_ASSET_PASSWORD'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_user_asset_folder",
+attribute "mwt_portal/cdn_asset_base_folder",
           :display_name => "CDN Asset Base Folder",
           :description => "The CDN asset folder.  This is combined to create the CDN download URL.  Example: '/portal_vs/mwt'.",
           :required => "recommended",
@@ -170,19 +170,19 @@ attribute "mwt_portal/cdn_storage_fqdn",
           :default => "acronymgame.upload.akamai.com",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_storage_user",
+attribute "mwt_portal/cdn_storage_user_account",
           :display_name => "CDN Storage User Account",
           :description => "The CDN storage user account.  Example: 'cred:CDN_STORAGE_USER'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_storage_password",
+attribute "mwt_portal/cdn_storage_user_password",
           :display_name => "CDN Storage User Password",
           :description => "The CDN storage user account password.  Example: 'cred:CDN_STORAGE_PASSWORD'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_storage_asset_folder",
+attribute "mwt_portal/cdn_storage_base_folder",
           :display_name => "CDN Storage Base Folder",
           :description => "The CDN storage asset folder.  Example: '/167367/portal'.",
           :required => "recommended",
@@ -281,14 +281,14 @@ attribute "mwt_portal/zendesk_account_id",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/zendesk_user",
-          :display_name => "Zendesk User",
+attribute "mwt_portal/zendesk_user_account",
+          :display_name => "Zendesk User Account",
           :description => "The Zendesk user to use. Example: 'cred:ZENDESK_USER'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/zendesk_password",
-          :display_name => "Zendesk Password",
+attribute "mwt_portal/zendesk_user_password",
+          :display_name => "Zendesk User Password",
           :description => "The Zendesk password to use. Example: 'cred:ZENDESK_PASSWORD'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]

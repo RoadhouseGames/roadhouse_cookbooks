@@ -170,7 +170,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/contact_email": {
+    "mwt_portal/email_contact_account": {
       "display_name": "Email Contact Account",
       "description": "The contact email address for the portal. Example: 'vibrant-sysadmin@vibrant-software.com'.",
       "required": "recommended",
@@ -184,7 +184,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/sender_email": {
+    "mwt_portal/email_sender_account": {
       "display_name": "EMail Sender Account",
       "description": "The sender email address for the portal. Example: 'noreply@mwtactics.com'.",
       "required": "recommended",
@@ -198,7 +198,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/smtp_user": {
+    "mwt_portal/email_smtp_user": {
       "display_name": "EMail SMTP Account",
       "description": "The SMTP account for the portal.  Example 'cred:EMAIL_SMTP_USER'",
       "required": "required",
@@ -211,7 +211,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/smtp_password": {
+    "mwt_portal/email_smtp_password": {
       "display_name": "EMail SMTP Password",
       "description": "The SMTP password for the portal.  Example 'cred:EMAIL_SMTP_PASSWORD'",
       "required": "required",
@@ -289,7 +289,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/cdn_fqdn": {
+    "mwt_portal/cdn_asset_fqdn": {
       "display_name": "CDN Asset Fully Qualified Domain Name",
       "description": "The CDN host fully qualified domain name. Example: 'cdn.mwtactics.com'.",
       "required": "recommended",
@@ -303,7 +303,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/cdn_user": {
+    "mwt_portal/cdn_asset_user_account": {
       "display_name": "CDN Asset User Account",
       "description": "The CDN user account.  Example: 'cred:CDN_ASSET_USER'.",
       "required": "required",
@@ -316,7 +316,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/cdn_password": {
+    "mwt_portal/cdn_asset_user_password": {
       "display_name": "CDN Asset User Password",
       "description": "The CDN user account password.  Example: 'cred:CDN_ASSET_PASSWORD'.",
       "required": "required",
@@ -329,7 +329,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/cdn_user_asset_folder": {
+    "mwt_portal/cdn_asset_base_folder": {
       "display_name": "CDN Asset Base Folder",
       "description": "The CDN asset folder.  This is combined to create the CDN download URL.  Example: '/portal_vs/mwt'.",
       "required": "recommended",
@@ -357,7 +357,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/cdn_storage_user": {
+    "mwt_portal/cdn_storage_user_account": {
       "display_name": "CDN Storage User Account",
       "description": "The CDN storage user account.  Example: 'cred:CDN_STORAGE_USER'.",
       "required": "required",
@@ -370,7 +370,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/cdn_storage_password": {
+    "mwt_portal/cdn_storage_user_password": {
       "display_name": "CDN Storage User Password",
       "description": "The CDN storage user account password.  Example: 'cred:CDN_STORAGE_PASSWORD'.",
       "required": "required",
@@ -383,7 +383,7 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/cdn_storage_asset_folder": {
+    "mwt_portal/cdn_storage_base_folder": {
       "display_name": "CDN Storage Base Folder",
       "description": "The CDN storage asset folder.  Example: '/167367/portal'.",
       "required": "recommended",
@@ -594,8 +594,8 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/zendesk_user": {
-      "display_name": "Zendesk User",
+    "mwt_portal/zendesk_user_account": {
+      "display_name": "Zendesk User Account",
       "description": "The Zendesk user to use. Example: 'cred:ZENDESK_USER'.",
       "required": "required",
       "recipes": [
@@ -607,8 +607,8 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/zendesk_password": {
-      "display_name": "Zendesk Password",
+    "mwt_portal/zendesk_user_password": {
+      "display_name": "Zendesk User Password",
       "description": "The Zendesk password to use. Example: 'cred:ZENDESK_PASSWORD'.",
       "required": "required",
       "recipes": [
