@@ -97,7 +97,7 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :game_require_beta_key => node[:mwt_portal][:game_require_beta_key],
       :game_shared_secret => node[:mwt_portal][:game_shared_secret],
       :db_fqdn => node[:db][:dns][:master][:fqdn],
-      :db_schema_name => node[:db][:dump][:database_name],
+      :db_schema_name => node[:app_php][:db_schema_name],
       :db_user => node[:db][:application][:user],
       :db_password => node[:db][:application][:password],
       :email_contact_account => node[:mwt_portal][:email_contact_account],
