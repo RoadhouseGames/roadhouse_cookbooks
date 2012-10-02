@@ -36,7 +36,7 @@ attribute "mwt_portal/game_hostname",
 attribute "mwt_portal/game_port",
           :display_name => "Game Port",
           :description => "The game server port. Example: '80' or '8000'.",
-          :required => "required",
+          :required => "recommended",
           :default => "80",
           :recipes => ["mwt_portal::default"]
 
@@ -49,7 +49,7 @@ attribute "mwt_portal/game_client_url",
 attribute "mwt_portal/game_require_beta_key",
           :display_name => "Game Requires Beta Key",
           :description => "Does the game require a beta key to launch?  TRUE or FALSE.",
-          :required => "required",
+          :required => "recommended",
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
