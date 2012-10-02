@@ -67,13 +67,13 @@ attribute "mwt_portal/db_forum_schema_name",
 
 attribute "mwt_portal/db_forum_user",
           :display_name => "Database Forum User Name",
-          :description => "The Forum database account.  Example 'cred:DBFORUM_USER'.",
+          :description => "The Forum database account.  Example 'cred:DBAPPLICATION_USER'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/db_forum_password",
           :display_name => "Database Forum Password",
-          :description => "The Forum database account password.  Example: 'cred:DBFORUM_PASSWORD'.",
+          :description => "The Forum database account password.  Example: 'cred:DBAPPLICATION_PASSWORD'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
