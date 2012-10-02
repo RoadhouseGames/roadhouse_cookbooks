@@ -62,8 +62,8 @@ $REGISTRY->account->require_nda_to_launch_game = TRUE;
 $REGISTRY->smtp->enable = FALSE;
 $REGISTRY->smtp->ssl = 'ssl';
 $REGISTRY->smtp->auth = 'login';
-$REGISTRY->smtp->username = '<%= @smtp_user %>';
-$REGISTRY->smtp->password = '<%= @smtp_password %>';
+$REGISTRY->smtp->username = '<%= @email_smtp_user %>';
+$REGISTRY->smtp->password = '<%= @email_smtp_password %>';
 $REGISTRY->smtp->port = 465;
 $REGISTRY->smtp->server = 'smtp.gmail.com';
         
@@ -130,8 +130,8 @@ $REGISTRY->webpurify->api_key = '<%= @web_purify_key %>';
 # Zendesk
 ####################################################
 $REGISTRY->zendesk->account = '<%= @zendesk_account_id %>';
-$REGISTRY->zendesk->username = '<%= @zendesk_user %>';
-$REGISTRY->zendesk->password = '<%= @zendesk_password %>';
+$REGISTRY->zendesk->username = '<%= @zendesk_user_account %>';
+$REGISTRY->zendesk->password = '<%= @zendesk_user_password %>';
 $REGISTRY->zendesk->custom_field_id = '<%= @zendesk_field_id %>';
 
 ####################################################

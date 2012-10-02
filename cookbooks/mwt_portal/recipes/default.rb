@@ -56,6 +56,24 @@ bash "edit_php_config" do
   EOH
 end
 
+log "  Creating '#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php' file"
+template "#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php" do
+  action :create
+  source "conf_global.php.erb"
+  mode "0644"
+  group "root"
+  owner "root"
+  cookbook "mwt_portal"
+  variables(
+      :domain => node[:mwt_portal][:domain],
+      :portal_hostname => node[:mwt_portal][:portal_hostname],
+      :db_forum_fqdn => node[:db][:dns][:master][:fqdn],
+      :db_forum_schema_name => node[:mwt_portal][:db_forum_schema_name],
+      :db_forum_user => node[:db][:application][:user],
+      :db_forum_password => node[:db][:application][:password]
+  )
+end
+
 log "  Creating '#{WWW_DOCUMENT_ROOT}/application/configs/application.php' file"
 
 MEMCACHE_ENABLED = TRUE
@@ -115,27 +133,9 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :google_analytics_account => node[:mwt_portal][:google_analytics_account],
       :web_purify_key => node[:mwt_portal][:web_purify_key],
       :zendesk_account_id => node[:mwt_portal][:zendesk_account_id],
-      :zendesk_user_account => node[:mwt_portal][:zendesk_user],
-      :zendesk_user_password => node[:mwt_portal][:zendesk_password],
+      :zendesk_user_account => node[:mwt_portal][:zendesk_user_account],
+      :zendesk_user_password => node[:mwt_portal][:zendesk_user_password],
       :zendesk_field_id => node[:mwt_portal][:zendesk_field_id]
-  )
-end
-
-log "  Creating '#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php' file"
-template "#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php" do
-  action :create
-  source "conf_global.php.erb"
-  mode "0644"
-  group "root"
-  owner "root"
-  cookbook "mwt_portal"
-  variables(
-      :domain => node[:mwt_portal][:domain],
-      :portal_hostname => node[:mwt_portal][:portal_hostname],
-      :db_forum_fqdn => node[:db][:dns][:master][:fqdn],
-      :db_forum_schema_name => node[:mwt_portal][:db_forum_schema_name],
-      :db_forum_user => node[:db][:application][:user],
-      :db_forum_password => node[:db][:application][:password]
   )
 end
 
