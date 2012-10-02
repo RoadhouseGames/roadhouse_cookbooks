@@ -52,7 +52,7 @@ log "  Configuring PHP"
 bash "edit_php_config" do
   cwd PHP_CONFIG_DIR
   code <<-EOH
-    sed 's:short_open_tags = Off:short_open_tags = On:' -i php.ini
+    sed 's:short_open_tag = Off:short_open_tag = On:' -i php.ini
   EOH
 end
 
