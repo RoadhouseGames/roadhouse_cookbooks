@@ -1,0 +1,181 @@
+<?php
+global $REGISTRY;
+
+####################################################
+# Path
+####################################################
+$REGISTRY->path->base = realpath(dirname(dirname(dirname(__FILE__))));
+
+####################################################
+# Application
+####################################################
+# Show exception stack trace and request variable.
+$REGISTRY->app->debug_mode = FALSE;
+# Web application contact email.
+$REGISTRY->app->contact_email = '<%= @contact_email %>';
+# Web application sender email
+$REGISTRY->app->sender_email = '<%= @sender_email %>';
+# Vibrant Software contact email.
+$REGISTRY->app->vibrant_email = 'vibrant-sysadmin@vibrant-software.com';
+# Email exception to $REGISTRY->app->vibrant_email
+$REGISTRY->app->email_exceptions = TRUE;
+$REGISTRY->app->domain_name = '<%= @domain %>';
+$REGISTRY->app->cdn_http_host = '<%= @cdn_fqdn %>';   // should be same as host in site_asset_url, user_asset_url
+$REGISTRY->app->cdn_https_host = '<%= @cdn_fqdn %>';
+$REGISTRY->app->site_asset_url = NULL;                 // no assets have been uploaded for this host
+$REGISTRY->app->user_asset_url = 'http://' . $REGISTRY->app->cdn_http_host . '<%= @cdn_user_asset_folder %>';
+
+$REGISTRY->app->force_https = FALSE;
+$REGISTRY->app->is_beta = TRUE; # is the app in beta mode?
+$REGISTRY->app->accept_beta_key = TRUE; # accept beta key?
+$REGISTRY->app->incorrect_login_threshold = 5;
+$REGISTRY->app->google_analytics_acct = '<%= @google_analytics_account %>';
+$REGISTRY->app->allow_coupons = TRUE;
+$REGISTRY->app->disable_unity = FALSE;
+
+####################################################
+# Memcached
+####################################################
+$REGISTRY->memcached->enabled = <%= @memcache_enabled %>;
+$REGISTRY->memcached->servers = array('<%= @memcache_fqdn %>:<%= @memcache_port %>');
+$REGISTRY->memcached->default_expiry = 3600;    // seconds
+$REGISTRY->memcached->enable_logging = FALSE;   // turn off when done testing
+
+####################################################
+# Portal API
+####################################################
+$REGISTRY->app->enable_portal_api = TRUE;
+$REGISTRY->app->skip_api_signature = TRUE;
+
+####################################################
+# Sign Up
+####################################################
+$REGISTRY->login->require_nda = TRUE;
+$REGISTRY->signup->require_email_verification = FALSE;
+$REGISTRY->account->require_email_verification = TRUE;
+$REGISTRY->account->require_beta_key_to_launch_game = <%= @game_require_beta_key %>;
+$REGISTRY->account->require_nda_to_launch_game = TRUE;
+
+####################################################
+# SMTP
+####################################################
+$REGISTRY->smtp->enable = FALSE;
+$REGISTRY->smtp->ssl = 'ssl';
+$REGISTRY->smtp->auth = 'login';
+$REGISTRY->smtp->username = '<%= @smtp_user %>';
+$REGISTRY->smtp->password = '<%= @smtp_password %>';
+$REGISTRY->smtp->port = 465;
+$REGISTRY->smtp->server = 'smtp.gmail.com';
+        
+####################################################
+# Database
+####################################################
+$REGISTRY->db->default->host = '<%= @db_fqdn %>';
+$REGISTRY->db->default->dbname = '<%= @db_schema_name %>';
+$REGISTRY->db->default->username = '<%= @db_user %>';
+$REGISTRY->db->default->password = '<%= @db_password %>';
+
+####################################################
+# Unity Game
+####################################################
+$REGISTRY->game->api_endpoint = 'http://<%= @game_hostname %>.<%= @domain %>'; // set to empty to disable API calls
+$REGISTRY->game->log_api = true;
+$REGISTRY->game->shared_secret = '<%= @game_shared_secret %>';
+$REGISTRY->game->client_url = 'http://<%= @game_client_url %>';
+$REGISTRY->game->width = 1280;
+$REGISTRY->game->height = 720;
+$REGISTRY->game->host = "<%= @game_hostname %>.<%= @domain %>";
+$REGISTRY->game->port = "<%= @game_port %>";
+
+####################################################
+# MailChimp
+####################################################
+$REGISTRY->mailchimp->api_key = '<% @mail_chimp_key %>';
+$REGISTRY->mailchimp->registration_list_id = '<% @mail_chimp_reg_id %>';
+$REGISTRY->mailchimp->newsletter_list_id = '<% @mail_chimp_news_id %>';
+
+####################################################
+# PlaySpan
+####################################################
+$REGISTRY->playspan->log_api = true;
+$REGISTRY->playspan->enable_test_drivers = false;
+$REGISTRY->playspan->enable_upay_lightbox = true;
+$REGISTRY->playspan->sig_version = '1';
+$REGISTRY->playspan->access_id = '<%= @playspan_id %>';
+$REGISTRY->playspan->store_id = '<%= @playspan_id %>';
+$REGISTRY->playspan->partner = '<%= @playspan_id %>';
+$REGISTRY->playspan->vendor = '<%= @playspan_id %>';
+$REGISTRY->playspan->catalog = '<%= @playspan_catalog %>';
+$REGISTRY->playspan->merchant_key = '<%= @playspan_merchant_key %>';
+$REGISTRY->playspan->admin_pwd = '<%= @playspan_password %>';
+$REGISTRY->playspan->api_url = 'https://demo1.playspan.com/ps-primary-api/store/' . $REGISTRY->playspan->store_id . '/';
+$REGISTRY->playspan->login_id_prefix = '<%= @playspan_user_account_prefix %>'; // will be prepended to user_id to form the playspan_login_id (use your own concatenating character)
+$REGISTRY->playspan->scraps_code = '<%= @playspan_scrap_code %>';
+$REGISTRY->playspan->cbills_code = '<%= @playspan_cbills_code %>';
+$REGISTRY->playspan->cbills_category_id = 1;
+$REGISTRY->playspan->enable_subscriptions = false;
+$REGISTRY->playspan->featured_subscription = '<%= @playspan_featured_sub %>';
+$REGISTRY->playspan->subscription_product_id_1 = '<%= @playspan_product_id_prefix %>1';
+$REGISTRY->playspan->subscription_product_id_2 = '<%= @playspan_product_id_prefix %>2';
+$REGISTRY->playspan->subscription_product_id_3 = '<%= @playspan_product_id_prefix %>3';
+$REGISTRY->playspan->enable_premiums = false;
+$REGISTRY->playspan->enable_boosts = false;
+
+####################################################
+# WebPurify
+####################################################
+$REGISTRY->webpurify->api_key = '<%= @web_purify_key %>';
+
+####################################################
+# Zendesk
+####################################################
+$REGISTRY->zendesk->account = '<%= @zendesk_account_id %>';
+$REGISTRY->zendesk->username = '<%= @zendesk_user %>';
+$REGISTRY->zendesk->password = '<%= @zendesk_password %>';
+$REGISTRY->zendesk->custom_field_id = '<%= @zendesk_field_id %>';
+
+####################################################
+# Amazon Web Services
+####################################################
+$REGISTRY->amazon->access_key = '<%= @aws_access_key %>';
+$REGISTRY->amazon->secret_key = '<%= @aws_secret_key %>';
+$REGISTRY->amazon->enable_ses = true;
+
+####################################################
+# Invision Power Board
+####################################################
+$REGISTRY->ipb->create_as_beta_member = TRUE;
+$REGISTRY->ipb->beta_member_group_id = 7;
+
+####################################################
+# Akamai
+####################################################
+$REGISTRY->akamai->enabled = true;
+$REGISTRY->akamai->ccuapi = 'https://ccuapi.akamai.com/ccuapi-axis.wsdl';
+$REGISTRY->akamai->username = '<%= @cdn_user %>';
+$REGISTRY->akamai->password = '<%= @cdn_password %>';
+$REGISTRY->akamai->notifications_email = '';
+$REGISTRY->akamai->web_base_url = 'http://cdn.mwtactics.com/portal'; // ghornmoen - remove on next update of the portal!
+$REGISTRY->akamai->log_api = 1;
+$REGISTRY->akamai->net_storage_host = '<%= @cdn_storage_fqdn %>';
+$REGISTRY->akamai->net_storage_username = '<%= @cdn_storage_user %>';
+$REGISTRY->akamai->net_storage_password = '<%= @cdn_storage_password %>';
+$REGISTRY->akamai->net_storage_base_dir = '<%= @cdn_storage_asset_folder %>';
+$REGISTRY->akamai->net_purge_empty_dirs = true; // on file delete, purge empty directories recursively
+
+####################################################
+# Session Config
+####################################################
+$REGISTRY->session->name = 'MWTSESSID';
+$REGISTRY->session->inactive_lifetime = 60 * 60 * 4; # 4 hrs
+$REGISTRY->session->remember_me_cookie_lifetime = 60 * 60 * 24 * 14; # 14 days
+
+####################################################
+# Admin Config
+####################################################
+$REGISTRY->admin->disable_grant_offer = FALSE;
+
+# optional. bootstrap file will look for $REGISTRY->db->readOnly->host.
+# if set, $REGISTRY->db->readOnly->adapter will be configured with the settings provided
+# if not set, $REGISTRY->db->readOnly->adapter = $REGISTRY->db->default->adapter
+$REGISTRY->db->readOnly->adapter = $REGISTRY->db->default->adapter;

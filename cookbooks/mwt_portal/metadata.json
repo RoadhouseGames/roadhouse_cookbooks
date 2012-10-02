@@ -22,6 +22,605 @@
   "replacing": {
   },
   "attributes": {
+    "mwt_portal": {
+      "display_name": "MWT Portal Settings",
+      "type": "hash",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "mwt_portal/domain": {
+      "display_name": "Portal Domain",
+      "description": "The domain for the portal. Example: 'mwtactics.com' or 'staging.mwtactics.com'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/portal_hostname": {
+      "display_name": "Portal Hostname",
+      "description": "The short hostname for the portal. Example: 'www'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/game_hostname": {
+      "display_name": "Game Server Hostname",
+      "description": "The short hostname for the game server. Example: 'game'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/game_port": {
+      "display_name": "Game Port",
+      "description": "The game server port. Example: '80' or '8000'.",
+      "required": "required",
+      "default": "80",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/game_client_url": {
+      "display_name": "Game Client URL",
+      "description": "The URL where the game client lives.  Example 'game.mwtactics.com/Content/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/game_require_beta_key": {
+      "display_name": "Game Requires Beta Key",
+      "description": "Does the game require a beta key to launch?  TRUE or FALSE.",
+      "required": "required",
+      "default": "FALSE",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/game_shared_secret": {
+      "display_name": "Game Shared Secret",
+      "description": "A secret key that the portal passes to the game server for validation.  Example 'cred:GAME_SECRET_KEY'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/db_forum_schema_name": {
+      "display_name": "Forum Database Schema Name",
+      "description": "The Forum database (schema) name. Example: 'mwt_ipb'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/db_forum_user": {
+      "display_name": "Database Forum User Name",
+      "description": "The Forum database account.  Example 'cred:DBFORUM_USER'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/db_forum_password": {
+      "display_name": "Database Forum Password",
+      "description": "The Forum database account password.  Example: 'cred:DBFORUM_PASSWORD'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/contact_email": {
+      "display_name": "Contact Email",
+      "description": "The contact email address for the portal. Example: 'vibrant-sysadmin@vibrant-software.com'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/sender_email": {
+      "display_name": "Sender Email",
+      "description": "The sender email address for the portal. Example: 'noreply@mwtactics.com'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/smtp_user": {
+      "display_name": "SMTP user",
+      "description": "The SMTP account for the portal.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/smtp_password": {
+      "display_name": "SMTP Password",
+      "description": "The SMTP password for the portal.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/mail_chimp_key": {
+      "display_name": "Mail Chimp Key",
+      "description": "The Mail Chimp API Key.  Example: 'cred:MAILCHIMP_KEY'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/mail_chimp_reg_id": {
+      "display_name": "Mail Chimp Registration List ID",
+      "description": "The Mail Chimp Registration List ID.  Example: 'cred:MAILCHIMP_REG_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/mail_chimp_news_id": {
+      "display_name": "Mail Chimp Newsletter List ID",
+      "description": "The Mail Chimp Newsletter List ID.  Example: 'cred:MAILCHIMP_NEWS_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/aws_access_key": {
+      "display_name": "AWS Access Key",
+      "description": "The AWS access key. Example: 'cred:AWS_ACCESS_KEY_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/aws_secret_key": {
+      "display_name": "AWS Access Key",
+      "description": "The AWS secret key. Example: 'cred:AWS_SECRET_ACCESS_KEY'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_fqdn": {
+      "display_name": "CDN Fully Qualified Domain Name",
+      "description": "The CDN host fully qualified domain name. Example: 'cdn.mwtactics.com'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_user": {
+      "display_name": "CDN User account",
+      "description": "The CDN user account.  Example: 'cred:CDN_ASSET_USER'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_password": {
+      "display_name": "CDN Password",
+      "description": "The CDN user account password.  Example: 'cred:CDN_ASSET_PASSWORD'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_user_asset_folder": {
+      "display_name": "CDN User Asset Folder",
+      "description": "The CDN user asset folder.  This is combined to create the CDN download URL.  Example: '/portal_vs/mwt'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_storage_fqdn": {
+      "display_name": "CDN Storage Fully Qualified Domain Name",
+      "description": "The CDN storage fully qualified domain name.  Example: 'acronymgame.upload.akamai.com'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_storage_user": {
+      "display_name": "CDN Storage User",
+      "description": "The CDN storage user account.  Example: 'cred:CDN_STORAGE_USER'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_storage_password": {
+      "display_name": "CDN Storage Password",
+      "description": "The CDN storage user account password.  Example: 'cred:CDN_STORAGE_PASSWORD'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/cdn_storage_asset_folder": {
+      "display_name": "CDN Storage Asset Folder",
+      "description": "The CDN storage asset folder.  Example: '/167367/portal'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/memcache_fqdn": {
+      "display_name": "Memcache Fully Qualified Domain Name",
+      "description": "The Memcache fully qualified domain name. Example: 'memcache.staging.mwtactics.com'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/memcache_port": {
+      "display_name": "Memcache Port",
+      "description": "The port for the memcache server. Example: '11211'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_id": {
+      "display_name": "Playspan ID",
+      "description": "The Playspan ID.  Example: 'cred:PLAYSPAN_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_merchant_key": {
+      "display_name": "Playspan Merchant Key",
+      "description": "The Playspan merchant key.  Example: 'cred:PLAYSPAN_MERCHANT_KEY'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_password": {
+      "display_name": "Playspan Password",
+      "description": "The Playspan password.  Example: 'cred:PLAYSPAN_PASSWORD'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_user_account_prefix": {
+      "display_name": "Playspan User Account Prefix",
+      "description": "The prefix to apply to all user login IDs.  Example: 'cred:PLAYSPAN_ACCOUNT_PREFIX'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_catalog": {
+      "display_name": "Playspan ID",
+      "description": "The Playspan catalog ID.  Example: 'cred:PLAYSPAN_CATALOG_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_upay_lightbox": {
+      "display_name": "Playspan Enable UPay Lightbox",
+      "description": "Enable Playspan upay lightbox.  TRUE or FALSE.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_featured_sub": {
+      "display_name": "Playspan Featured Subscription",
+      "description": "Playspan featured subscription.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_product_id_prefix": {
+      "display_name": "Playspan ",
+      "description": "Playspan product ID prefix.  Example: 'premiumaccount1' where you want values premiumaccount1 to premiumaccount3.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_scrap_code": {
+      "display_name": "Playspan Scrap Code",
+      "description": "The Playspan code for the 'Scrap' currency.  Example: 'cred:PLAYSPAN_SCRAP_CODE'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_cbills_code": {
+      "display_name": "Playspan CBills Code",
+      "description": "The Playspan code for the 'CBills' currency.  Example: 'cred:PLAYSPAN_CBILLS_CODE'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/google_analytics_account": {
+      "display_name": "Google Analytics Account",
+      "description": "The Google Analytics Account ID. Example: '' in Dev or 'UA-28605391-1' in Live.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/web_purify_key": {
+      "display_name": "Web Purify API Key",
+      "description": "The key to use with Web Purify. Example: 'cred:WEB_PURIFY_KEY'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/zendesk_account_id": {
+      "display_name": "Zendesk Account ID",
+      "description": "The Zendesk account ID to use. Example: 'cred:ZENDESK_ACCOUNT_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/zendesk_user": {
+      "display_name": "Zendesk User",
+      "description": "The Zendesk user to use. Example: 'cred:ZENDESK_USER'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/zendesk_password": {
+      "display_name": "Zendesk Password",
+      "description": "The Zendesk password to use. Example: 'cred:ZENDESK_PASSWORD'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/zendesk_field_id": {
+      "display_name": "Zendesk Field ID",
+      "description": "The Zendesk field ID to use. Example: 'cred:ZENDESK_FIELD_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    }
   },
   "groupings": {
   },
