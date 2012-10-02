@@ -12,18 +12,18 @@ $REGISTRY->path->base = realpath(dirname(dirname(dirname(__FILE__))));
 # Show exception stack trace and request variable.
 $REGISTRY->app->debug_mode = FALSE;
 # Web application contact email.
-$REGISTRY->app->contact_email = '<%= @contact_email %>';
+$REGISTRY->app->contact_email = '<%= @email_contact_account %>';
 # Web application sender email
-$REGISTRY->app->sender_email = '<%= @sender_email %>';
+$REGISTRY->app->sender_email = '<%= @email_sender_account %>';
 # Vibrant Software contact email.
 $REGISTRY->app->vibrant_email = 'vibrant-sysadmin@vibrant-software.com';
 # Email exception to $REGISTRY->app->vibrant_email
 $REGISTRY->app->email_exceptions = TRUE;
 $REGISTRY->app->domain_name = '<%= @domain %>';
-$REGISTRY->app->cdn_http_host = '<%= @cdn_fqdn %>';   // should be same as host in site_asset_url, user_asset_url
-$REGISTRY->app->cdn_https_host = '<%= @cdn_fqdn %>';
+$REGISTRY->app->cdn_http_host = '<%= @cdn_asset_fqdn %>';   // should be same as host in site_asset_url, user_asset_url
+$REGISTRY->app->cdn_https_host = '<%= @cdn_asset_fqdn %>';
 $REGISTRY->app->site_asset_url = NULL;                 // no assets have been uploaded for this host
-$REGISTRY->app->user_asset_url = 'http://' . $REGISTRY->app->cdn_http_host . '<%= @cdn_user_asset_folder %>';
+$REGISTRY->app->user_asset_url = 'http://' . $REGISTRY->app->cdn_http_host . '<%= @cdn_asset_base_folder %>';
 
 $REGISTRY->app->force_https = FALSE;
 $REGISTRY->app->is_beta = TRUE; # is the app in beta mode?
@@ -101,10 +101,10 @@ $REGISTRY->playspan->log_api = true;
 $REGISTRY->playspan->enable_test_drivers = false;
 $REGISTRY->playspan->enable_upay_lightbox = true;
 $REGISTRY->playspan->sig_version = '1';
-$REGISTRY->playspan->access_id = '<%= @playspan_id %>';
-$REGISTRY->playspan->store_id = '<%= @playspan_id %>';
-$REGISTRY->playspan->partner = '<%= @playspan_id %>';
-$REGISTRY->playspan->vendor = '<%= @playspan_id %>';
+$REGISTRY->playspan->access_id = '<%= @playspan_access_id %>';
+$REGISTRY->playspan->store_id = '<%= @playspan_store_id %>';
+$REGISTRY->playspan->partner = '<%= @playspan_store_id %>';
+$REGISTRY->playspan->vendor = '<%= @playspan_store_id %>';
 $REGISTRY->playspan->catalog = '<%= @playspan_catalog %>';
 $REGISTRY->playspan->merchant_key = '<%= @playspan_merchant_key %>';
 $REGISTRY->playspan->admin_pwd = '<%= @playspan_password %>';
@@ -152,15 +152,15 @@ $REGISTRY->ipb->beta_member_group_id = 7;
 ####################################################
 $REGISTRY->akamai->enabled = true;
 $REGISTRY->akamai->ccuapi = 'https://ccuapi.akamai.com/ccuapi-axis.wsdl';
-$REGISTRY->akamai->username = '<%= @cdn_user %>';
-$REGISTRY->akamai->password = '<%= @cdn_password %>';
+$REGISTRY->akamai->username = '<%= @cdn_asset_user_account %>';
+$REGISTRY->akamai->password = '<%= @cdn_asset_user_password %>';
 $REGISTRY->akamai->notifications_email = '';
 $REGISTRY->akamai->web_base_url = 'http://cdn.mwtactics.com/portal'; // ghornmoen - remove on next update of the portal!
 $REGISTRY->akamai->log_api = 1;
 $REGISTRY->akamai->net_storage_host = '<%= @cdn_storage_fqdn %>';
-$REGISTRY->akamai->net_storage_username = '<%= @cdn_storage_user %>';
-$REGISTRY->akamai->net_storage_password = '<%= @cdn_storage_password %>';
-$REGISTRY->akamai->net_storage_base_dir = '<%= @cdn_storage_asset_folder %>';
+$REGISTRY->akamai->net_storage_username = '<%= @cdn_storage_user_account %>';
+$REGISTRY->akamai->net_storage_password = '<%= @cdn_storage_user_password %>';
+$REGISTRY->akamai->net_storage_base_dir = '<%= @cdn_storage_base_folder %>';
 $REGISTRY->akamai->net_purge_empty_dirs = true; // on file delete, purge empty directories recursively
 
 ####################################################

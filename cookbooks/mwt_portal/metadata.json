@@ -399,9 +399,22 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/playspan_id": {
-      "display_name": "Playspan ID",
-      "description": "The Playspan ID.  Example: 'cred:PLAYSPAN_ID'.",
+    "mwt_portal/playspan_access_id": {
+      "display_name": "Playspan Access ID",
+      "description": "The Playspan Access ID.  Example: 'cred:PLAYSPAN_ACCESS_ID'.",
+      "required": "required",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "mwt_portal/playspan_store_id": {
+      "display_name": "Playspan Store ID",
+      "description": "The Playspan Store ID.  Example: 'cred:PLAYSPAN_STORE_ID'.",
       "required": "required",
       "recipes": [
         "mwt_portal::default"

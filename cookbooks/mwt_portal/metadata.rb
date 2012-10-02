@@ -191,9 +191,15 @@ attribute "mwt_portal/cdn_storage_base_folder",
           :default => "/167367/portal",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/playspan_id",
-          :display_name => "Playspan ID",
-          :description => "The Playspan ID.  Example: 'cred:PLAYSPAN_ID'.",
+attribute "mwt_portal/playspan_access_id",
+          :display_name => "Playspan Access ID",
+          :description => "The Playspan Access ID.  Example: 'cred:PLAYSPAN_ACCESS_ID'.",
+          :required => "required",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/playspan_store_id",
+          :display_name => "Playspan Store ID",
+          :description => "The Playspan Store ID.  Example: 'cred:PLAYSPAN_STORE_ID'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 

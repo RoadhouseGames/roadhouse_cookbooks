@@ -120,7 +120,7 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :memcache_enabled => MEMCACHE_ENABLED,
       :memcache_hostname => node[:mwt_portal][:memcache_hostname],
       :memcache_port => node[:mwt_portal][:memcache_port],
-      :playspan_id => node[:mwt_portal][:playspan_id],
+      :playspan_access_id => node[:mwt_portal][:playspan_access_id],
       :playspan_merchant_key => node[:mwt_portal][:playspan_merchant_key],
       :playspan_password => node[:mwt_portal][:playspan_password],
       :playspan_user_account_prefix => node[:mwt_portal][:playspan_user_account_prefix],
