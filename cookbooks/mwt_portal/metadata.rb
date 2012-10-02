@@ -23,14 +23,14 @@ attribute "mwt_portal/domain",
 
 attribute "mwt_portal/portal_hostname",
           :display_name => "Portal Hostname",
-          :description => "The short hostname for the portal. Example: 'www'.",
+          :description => "The Portal short hostname. Example: 'www'.",
           :required => "recommended",
           :default => "www",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/game_hostname",
           :display_name => "Game Server Hostname",
-          :description => "The short hostname for the game server. Example: 'game'.",
+          :description => "The Game server short hostname. Example: 'game'.",
           :required => "recommended",
           :default => "game",
           :recipes => ["mwt_portal::default"]
@@ -62,9 +62,22 @@ attribute "mwt_portal/game_shared_secret",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
+attribute "mwt_portal/memcache_hostname",
+          :display_name => "Memcache Hostname",
+          :description => "The Memcache server short hostname. Example: 'memcache'.",
+          :required => "required",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/memcache_port",
+          :display_name => "Memcache Port",
+          :description => "The port for the memcache server. Example: '11211'.",
+          :required => "recommended",
+          :default => "11211",
+          :recipes => ["mwt_portal::default"]
+
 attribute "mwt_portal/db_forum_schema_name",
-          :display_name => "Forum Database Schema Name",
-          :description => "The Forum database (schema) name. Example: 'mwt_ipb'.",
+          :display_name => "Database Forum Schema Name",
+          :description => "The Forum (schema) name. Example: 'mwt_ipb'.",
           :required => "recommended",
           :default => "mwt_ipb",
           :recipes => ["mwt_portal::default"]
@@ -177,19 +190,6 @@ attribute "mwt_portal/cdn_storage_base_folder",
           :default => "/167367/portal",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/memcache_fqdn",
-          :display_name => "Memcache Fully Qualified Domain Name",
-          :description => "The Memcache fully qualified domain name. Example: 'memcache.staging.mwtactics.com'.",
-          :required => "required",
-          :recipes => ["mwt_portal::default"]
-
-attribute "mwt_portal/memcache_port",
-          :display_name => "Memcache Port",
-          :description => "The port for the memcache server. Example: '11211'.",
-          :required => "recommended",
-          :default => "11211",
-          :recipes => ["mwt_portal::default"]
-
 attribute "mwt_portal/playspan_id",
           :display_name => "Playspan ID",
           :description => "The Playspan ID.  Example: 'cred:PLAYSPAN_ID'.",
@@ -223,19 +223,22 @@ attribute "mwt_portal/playspan_catalog",
 attribute "mwt_portal/playspan_upay_lightbox",
           :display_name => "Playspan Enable UPay Lightbox",
           :description => "Enable Playspan upay lightbox.  TRUE or FALSE.",
-          :required => "required",
+          :required => "recommended",
+          :default => "TRUE",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_featured_sub",
           :display_name => "Playspan Featured Subscription",
           :description => "Playspan featured subscription.",
-          :required => "required",
+          :required => "recommended",
+          :default => "testsub001",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_product_id_prefix",
           :display_name => "Playspan Product ID",
-          :description => "Playspan product ID prefix.  Example: 'premiumaccount1' where you want values premiumaccount1 to premiumaccount3.",
-          :required => "required",
+          :description => "Playspan product ID prefix.  Example: 'premiumaccount' where you want values premiumaccount1 to premiumaccount3.",
+          :required => "recommended",
+          :default => "premiumaccount",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_scrap_code",

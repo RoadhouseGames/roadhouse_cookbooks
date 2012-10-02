@@ -37,7 +37,7 @@ $REGISTRY->app->disable_unity = FALSE;
 # Memcached
 ####################################################
 $REGISTRY->memcached->enabled = <%= @memcache_enabled %>;
-$REGISTRY->memcached->servers = array('<%= @memcache_fqdn %>:<%= @memcache_port %>');
+$REGISTRY->memcached->servers = array('<%= @memcache_hostname %>.<%= @domain %>:<%= @memcache_port %>');
 $REGISTRY->memcached->default_expiry = 3600;    // seconds
 $REGISTRY->memcached->enable_logging = FALSE;   // turn off when done testing
 
