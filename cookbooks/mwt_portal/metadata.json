@@ -47,20 +47,6 @@
       "calculated": false,
       "type": "string"
     },
-    "mwt_portal/portal_hostname": {
-      "display_name": "Portal Hostname",
-      "description": "The Portal short hostname. Example: 'www'.",
-      "required": "recommended",
-      "default": "www",
-      "recipes": [
-        "mwt_portal::default"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
     "mwt_portal/game_hostname": {
       "display_name": "Game Server Hostname",
       "description": "The Game server short hostname. Example: 'game'.",

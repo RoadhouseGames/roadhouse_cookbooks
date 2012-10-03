@@ -66,7 +66,6 @@ template "#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php" do
   cookbook "mwt_portal"
   variables(
       :domain => node[:mwt_portal][:domain],
-      :portal_hostname => node[:mwt_portal][:portal_hostname],
       :db_forum_fqdn => node[:db][:dns][:master][:fqdn],
       :db_forum_schema_name => node[:mwt_portal][:db_forum_schema_name],
       :db_forum_user => node[:db][:application][:user],
@@ -90,7 +89,6 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
   cookbook "mwt_portal"
   variables(
       :domain => node[:mwt_portal][:domain],
-      :portal_hostname => node[:mwt_portal][:portal_hostname],
       :game_hostname => node[:mwt_portal][:game_hostname],
       :game_port => node[:mwt_portal][:game_port],
       :game_client_url => node[:mwt_portal][:game_client_url],

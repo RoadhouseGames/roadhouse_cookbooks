@@ -21,13 +21,6 @@ attribute "mwt_portal/domain",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/portal_hostname",
-          :display_name => "Portal Hostname",
-          :description => "The Portal short hostname. Example: 'www'.",
-          :required => "recommended",
-          :default => "www",
-          :recipes => ["mwt_portal::default"]
-
 attribute "mwt_portal/game_hostname",
           :display_name => "Game Server Hostname",
           :description => "The Game server short hostname. Example: 'game'.",
