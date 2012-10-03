@@ -44,9 +44,9 @@ attribute "mwt_portal/game_port",
 
 attribute "mwt_portal/game_client_url",
           :display_name => "Game Client URL",
-          :description => "The URL where the game client lives.  Example 'game.mwtactics.com/Content/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.",
+          :description => "The URL where the game client lives.  Example 'http://cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.",
           :required => "recommended",
-          :default => "game.mwtactics.com/Content/unity/MechWarriorTactics/MechWarriorTactics.unity3d",
+          :default => "http://cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/game_require_beta_key",
@@ -146,6 +146,13 @@ attribute "mwt_portal/cdn_asset_fqdn",
           :default => "cdn.mwtactics.com",
           :recipes => ["mwt_portal::default"]
 
+attribute "mwt_portal/cdn_asset_fqdn_secure",
+          :display_name => "CDN Asset Secure HTTP Fully Qualified Domain Name",
+          :description => "The CDN host fully qualified domain name. Example: 'securecdn.mwtactics.com'.",
+          :required => "recommended",
+          :default => "securecdn.mwtactics.com",
+          :recipes => ["mwt_portal::default"]
+
 attribute "mwt_portal/cdn_asset_user_account",
           :display_name => "CDN Asset User Account",
           :description => "The CDN user account.  Example: 'cred:CDN_ASSET_USER'.",
@@ -186,9 +193,9 @@ attribute "mwt_portal/cdn_storage_user_password",
 
 attribute "mwt_portal/cdn_storage_base_folder",
           :display_name => "CDN Storage Base Folder",
-          :description => "The CDN storage asset folder.  Example: '/167367/portal'.",
+          :description => "The CDN storage asset folder.  Example: '/167367/portal_vs/mwt'.",
           :required => "recommended",
-          :default => "/167367/portal",
+          :default => "/167367/portal_vs/mwt",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_access_id",

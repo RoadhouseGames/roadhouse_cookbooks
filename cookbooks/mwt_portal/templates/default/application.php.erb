@@ -21,7 +21,7 @@ $REGISTRY->app->vibrant_email = 'vibrant-sysadmin@vibrant-software.com';
 $REGISTRY->app->email_exceptions = TRUE;
 $REGISTRY->app->domain_name = '<%= @domain %>';
 $REGISTRY->app->cdn_http_host = '<%= @cdn_asset_fqdn %>';   // should be same as host in site_asset_url, user_asset_url
-$REGISTRY->app->cdn_https_host = '<%= @cdn_asset_fqdn %>';
+$REGISTRY->app->cdn_https_host = '<%= @cdn_asset_fqdn_secure %>';
 $REGISTRY->app->site_asset_url = NULL;                 // no assets have been uploaded for this host
 $REGISTRY->app->user_asset_url = 'http://' . $REGISTRY->app->cdn_http_host . '<%= @cdn_asset_base_folder %>';
 
@@ -155,7 +155,6 @@ $REGISTRY->akamai->ccuapi = 'https://ccuapi.akamai.com/ccuapi-axis.wsdl';
 $REGISTRY->akamai->username = '<%= @cdn_asset_user_account %>';
 $REGISTRY->akamai->password = '<%= @cdn_asset_user_password %>';
 $REGISTRY->akamai->notifications_email = '';
-$REGISTRY->akamai->web_base_url = 'http://cdn.mwtactics.com/portal'; // ghornmoen - remove on next update of the portal!
 $REGISTRY->akamai->log_api = 1;
 $REGISTRY->akamai->net_storage_host = '<%= @cdn_storage_fqdn %>';
 $REGISTRY->akamai->net_storage_username = '<%= @cdn_storage_user_account %>';

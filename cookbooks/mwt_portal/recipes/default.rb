@@ -110,6 +110,7 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :aws_access_key => node[:mwt_portal][:aws_access_key],
       :aws_secret_key => node[:mwt_portal][:aws_secret_key],
       :cdn_asset_fqdn => node[:mwt_portal][:cdn_asset_fqdn],
+      :cdn_asset_fqdn_secure => node[:mwt_portal][:cdn_asset_fqdn_secure],
       :cdn_asset_user_account => node[:mwt_portal][:cdn_asset_user_account],
       :cdn_asset_user_password => node[:mwt_portal][:cdn_asset_user_password],
       :cdn_asset_base_folder => node[:mwt_portal][:cdn_asset_base_folder],
