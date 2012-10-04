@@ -10,7 +10,7 @@ $REGISTRY->path->base = realpath(dirname(dirname(dirname(__FILE__))));
 # Application
 ####################################################
 # Show exception stack trace and request variable.
-$REGISTRY->app->debug_mode = FALSE;
+$REGISTRY->app->debug_mode = FALSE;  #ghornmoen
 # Web application contact email.
 $REGISTRY->app->contact_email = '<%= @email_contact_account %>';
 # Web application sender email
@@ -26,11 +26,13 @@ $REGISTRY->app->site_asset_url = NULL;                 // no assets have been up
 $REGISTRY->app->user_asset_url = 'http://' . $REGISTRY->app->cdn_http_host . '<%= @cdn_asset_base_folder %>';
 
 $REGISTRY->app->force_https = FALSE;
+$REGISTRY->app->force_no_www = TRUE;
 $REGISTRY->app->is_beta = TRUE; # is the app in beta mode?
 $REGISTRY->app->accept_beta_key = TRUE; # accept beta key?
+$REGISTRY->app->hide_featured = FALSE;
 $REGISTRY->app->incorrect_login_threshold = 5;
 $REGISTRY->app->google_analytics_acct = '<%= @google_analytics_account %>';
-$REGISTRY->app->allow_coupons = TRUE;
+$REGISTRY->app->allow_coupons = TRUE; #ghornmoen
 $REGISTRY->app->disable_unity = FALSE;
 
 ####################################################
@@ -44,13 +46,13 @@ $REGISTRY->memcached->enable_logging = FALSE;   // turn off when done testing
 ####################################################
 # Portal API
 ####################################################
-$REGISTRY->app->enable_portal_api = TRUE;
+$REGISTRY->app->enable_portal_api = TRUE; #ghornmoen
+$REGISTRY->app->portal_api_logging = TRUE;
 $REGISTRY->app->skip_api_signature = TRUE;
 
 ####################################################
 # Sign Up
 ####################################################
-$REGISTRY->login->require_nda = TRUE;
 $REGISTRY->signup->require_email_verification = FALSE;
 $REGISTRY->account->require_email_verification = TRUE;
 $REGISTRY->account->require_beta_key_to_launch_game = <%= @game_require_beta_key %>;
@@ -115,9 +117,9 @@ $REGISTRY->playspan->cbills_code = '<%= @playspan_cbills_code %>';
 $REGISTRY->playspan->cbills_category_id = 1;
 $REGISTRY->playspan->enable_subscriptions = false;
 $REGISTRY->playspan->featured_subscription = '<%= @playspan_featured_sub %>';
-$REGISTRY->playspan->subscription_product_id_1 = '<%= @playspan_product_id_prefix %>1';
-$REGISTRY->playspan->subscription_product_id_2 = '<%= @playspan_product_id_prefix %>2';
-$REGISTRY->playspan->subscription_product_id_3 = '<%= @playspan_product_id_prefix %>3';
+$REGISTRY->playspan->subscription_product_id_1 = '<%= @playspan_product_id_prefix %>1'; #ghornmoen - account 1-3
+$REGISTRY->playspan->subscription_product_id_2 = '<%= @playspan_product_id_prefix %>2'; #ghornmoen
+$REGISTRY->playspan->subscription_product_id_3 = '<%= @playspan_product_id_prefix %>3'; #ghornmoen
 $REGISTRY->playspan->enable_premiums = false;
 $REGISTRY->playspan->enable_boosts = false;
 
@@ -155,7 +157,6 @@ $REGISTRY->akamai->ccuapi = 'https://ccuapi.akamai.com/ccuapi-axis.wsdl';
 $REGISTRY->akamai->username = '<%= @cdn_asset_user_account %>';
 $REGISTRY->akamai->password = '<%= @cdn_asset_user_password %>';
 $REGISTRY->akamai->notifications_email = '';
-$REGISTRY->akamai->log_api = 1;
 $REGISTRY->akamai->net_storage_host = '<%= @cdn_storage_fqdn %>';
 $REGISTRY->akamai->net_storage_username = '<%= @cdn_storage_user_account %>';
 $REGISTRY->akamai->net_storage_password = '<%= @cdn_storage_user_password %>';

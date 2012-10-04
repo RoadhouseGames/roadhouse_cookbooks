@@ -10,6 +10,9 @@ supports "centos", "~> 5.8"
 depends "rightscale"
 
 recipe "mwt_portal::default", "Configures the MWT web portal."
+recipe "mwt_portal::playspan_complete_pending_requests", "Flush any pending requests to Playspan."
+recipe "mwt_portal::user_log_cleanup", "Cleanup user logs in the database."
+recipe "mwt_portal::user_grant_watchdog", "Check that the user grant process is running."
 
 attribute "mwt_portal",
           :display_name => "MWT Portal Settings",

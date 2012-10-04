@@ -642,7 +642,10 @@
   "groupings": {
   },
   "recipes": {
-    "mwt_portal::default": "Configures the MWT web portal."
+    "mwt_portal::default": "Configures the MWT web portal.",
+    "mwt_portal::playspan_complete_pending_requests": "Flush any pending requests to Playspan.",
+    "mwt_portal::user_log_cleanup": "Cleanup user logs in the database.",
+    "mwt_portal::user_grant_watchdog": "Check that the user grant process is running."
   },
   "version": "0.0.1"
 }

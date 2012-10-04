@@ -1,0 +1,32 @@
+{
+  "name": "mwt_portal_cronjobs",
+  "description": "Configures mwt web portal cron jobs",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "maintainer": "Roadhouse Interactive and Infinite Game Publishing",
+  "maintainer_email": "george@roadhouseinteractive.com",
+  "license": "All rights reserved",
+  "platforms": {
+    "centos": "~> 5.8"
+  },
+  "dependencies": {
+    "rightscale": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "mwt_portal_cronjobs::default": "Configures MWT web portal cron jobs."
+  },
+  "version": "0.0.1"
+}
