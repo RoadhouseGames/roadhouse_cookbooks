@@ -69,6 +69,13 @@ attribute "mwt_portal/memcache_port",
           :default => "11211",
           :recipes => ["mwt_portal::default"]
 
+attribute "mwt_portal/php_timezone",
+          :display_name => "PHP Time Zone",
+          :description => "The PHP Time Zone. Example: 'America/Montreal'.",
+          :required => "recommended",
+          :default => "America/Montreal",
+          :recipes => ["mwt_portal::default"]
+
 attribute "mwt_portal/db_forum_schema_name",
           :display_name => "Database Forum Schema Name",
           :description => "The Forum (schema) name. Example: 'mwt_ipb'.",

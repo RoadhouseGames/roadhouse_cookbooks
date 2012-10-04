@@ -15,7 +15,6 @@ WWW_DOCUMENT_ROOT = node[:app][:root]
 WWW_NEW_DOCUMENT_ROOT = WWW_DOCUMENT_ROOT + "/public"
 SERVICES_FOLDER = WWW_DOCUMENT_ROOT + "/application/services"
 
-
 log "  Executing portal init.sh script"
 bash "execute_portal_init_script" do
   cwd SERVICES_FOLDER
@@ -49,9 +48,12 @@ bash "edit_apache_config" do
 end
 
 log "  Configuring PHP"
+FULL_TIME_ZONE_LINE = "date.timezone = " + node[:mwt_portal][:php_timezone]
+
 bash "edit_php_config" do
   cwd PHP_CONFIG_DIR
   code <<-EOH
+    sed 's:;date.timezone =:#{FULL_TIME_ZONE_LINE}:' -i php.ini
     sed 's:short_open_tag = Off:short_open_tag = On:' -i php.ini
   EOH
 end
@@ -74,7 +76,6 @@ template "#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php" do
 end
 
 log "  Creating '#{WWW_DOCUMENT_ROOT}/application/configs/application.php' file"
-
 MEMCACHE_ENABLED = TRUE
 if node[:mwt_portal][:memcache_hostname] == ""
   MEMCACHE_ENABLED = FALSE
@@ -137,6 +138,13 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :zendesk_user_password => node[:mwt_portal][:zendesk_user_password],
       :zendesk_field_id => node[:mwt_portal][:zendesk_field_id]
   )
+end
+
+log "  Rebuilding Forum Cache"
+bash "rebuild_forum_cache" do
+  code <<-EOH
+    /usr/bin/php /home/webapps/mwtactics/application/services/commandline.php "Cache" "refresh-ipb-template-and-css"
+  EOH
 end
 
 log "  Restarting httpd"
