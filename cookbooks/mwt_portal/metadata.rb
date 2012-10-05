@@ -178,7 +178,7 @@ attribute "mwt_portal/cdn_site_url",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/cdn_user_url",
-          :display_name => "CDN USer URL",
+          :display_name => "CDN User URL",
           :description => "The CDN URL for user assets (e.g. game team media). Example: 'http://cdn.mwtactics.com/portal' or 'cdn.mwtactics.com/portal_vs/staging'.",
           :required => "recommended",
           :default => "http://cdn.mwtactics.com/portal",

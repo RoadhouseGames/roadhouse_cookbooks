@@ -157,7 +157,7 @@ $REGISTRY->akamai->ccuapi = 'https://ccuapi.akamai.com/ccuapi-axis.wsdl';
 $REGISTRY->akamai->username = '<%= @cdn_asset_user_account %>';
 $REGISTRY->akamai->password = '<%= @cdn_asset_user_password %>';
 $REGISTRY->akamai->notifications_email = '';
-$REGISTRY->akamai->log_api = <%= cdn_log_api_enabled %>;
+$REGISTRY->akamai->log_api = <%= @cdn_log_api_enabled %>;
 $REGISTRY->akamai->net_storage_host = '<%= @cdn_storage_fqdn %>';
 $REGISTRY->akamai->net_storage_username = '<%= @cdn_storage_user_account %>';
 $REGISTRY->akamai->net_storage_password = '<%= @cdn_storage_user_password %>';
