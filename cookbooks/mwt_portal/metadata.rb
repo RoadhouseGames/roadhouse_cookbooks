@@ -68,9 +68,9 @@ attribute "mwt_portal/game_port",
 
 attribute "mwt_portal/game_client_url",
           :display_name => "Game Client URL",
-          :description => "The URL where the game client lives.  Example 'http://cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.",
+          :description => "The URL where the game client lives.  Example 'cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.",
           :required => "recommended",
-          :default => "http://cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d",
+          :default => "cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/game_require_beta_key",
@@ -179,9 +179,9 @@ attribute "mwt_portal/cdn_site_url",
 
 attribute "mwt_portal/cdn_user_url",
           :display_name => "CDN User URL",
-          :description => "The CDN URL for user assets (e.g. game team media). Example: 'http://cdn.mwtactics.com/portal' or 'cdn.mwtactics.com/portal_vs/staging'.",
+          :description => "The CDN URL for user assets (e.g. game team media). Example: 'cdn.mwtactics.com/portal' or 'cdn.mwtactics.com/portal_vs/staging'.",
           :required => "recommended",
-          :default => "http://cdn.mwtactics.com/portal",
+          :default => "cdn.mwtactics.com/portal",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/cdn_asset_user_account",
