@@ -89,6 +89,10 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
   owner "root"
   cookbook "mwt_portal"
   variables(
+      :debug_mode_enabled => node[:mwt_portal][:debug_mode_enabled],
+      :allow_coupons_enabled => node[:mwt_portal][:allow_coupons_enabled],
+      :api_logging_enabled => node[:mwt_portal][:api_logging_enabled],
+      :grant_offer_disabled => node[:mwt_portal][:grant_offer_disabled],
       :domain => node[:mwt_portal][:domain],
       :game_hostname => node[:mwt_portal][:game_hostname],
       :game_port => node[:mwt_portal][:game_port],
@@ -108,27 +112,31 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :mail_chimp_news_id => node[:mwt_portal][:mail_chimp_news_id],
       :aws_access_key => node[:mwt_portal][:aws_access_key],
       :aws_secret_key => node[:mwt_portal][:aws_secret_key],
-      :cdn_asset_fqdn => node[:mwt_portal][:cdn_asset_fqdn],
-      :cdn_asset_fqdn_secure => node[:mwt_portal][:cdn_asset_fqdn_secure],
+      :cdn_site_url => node[:mwt_portal][:cdn_site_url],
+      :cdn_user_url => node[:mwt_portal][:cdn_user_url],
       :cdn_asset_user_account => node[:mwt_portal][:cdn_asset_user_account],
       :cdn_asset_user_password => node[:mwt_portal][:cdn_asset_user_password],
-      :cdn_asset_base_folder => node[:mwt_portal][:cdn_asset_base_folder],
       :cdn_storage_fqdn => node[:mwt_portal][:cdn_storage_fqdn],
       :cdn_storage_user_account => node[:mwt_portal][:cdn_storage_user_account],
       :cdn_storage_user_password => node[:mwt_portal][:cdn_storage_user_password],
       :cdn_storage_base_folder => node[:mwt_portal][:cdn_storage_base_folder],
+      :cdn_log_api_enabled => node[:mwt_portal][:cdn_log_api_enabled],
       :memcache_enabled => MEMCACHE_ENABLED,
       :memcache_hostname => node[:mwt_portal][:memcache_hostname],
       :memcache_port => node[:mwt_portal][:memcache_port],
+      :playspan_url_prefix => node[:mwt_portal][:playspan_url_prefix],
       :playspan_access_id => node[:mwt_portal][:playspan_access_id],
       :playspan_store_id => node[:mwt_portal][:playspan_store_id],
       :playspan_merchant_key => node[:mwt_portal][:playspan_merchant_key],
-      :playspan_password => node[:mwt_portal][:playspan_password],
-      :playspan_user_account_prefix => node[:mwt_portal][:playspan_user_account_prefix],
+      :playspan_admin_password => node[:mwt_portal][:playspan_admin_password],
+      :playspan_upay_lightbox_enabled => node[:mwt_portal][:playspan_upay_lightbox_enabled],
+      :playspan_login_id_prefix => node[:mwt_portal][:playspan_login_id_prefix],
       :playspan_catalog => node[:mwt_portal][:playspan_catalog],
       :playspan_upay_lightbox => node[:mwt_portal][:playspan_upay_lightbox],
       :playspan_featured_sub => node[:mwt_portal][:playspan_featured_sub],
-      :playspan_product_id_prefix => node[:mwt_portal][:playspan_product_id_prefix],
+      :playspan_product_subscription_id_1 => node[:mwt_portal][:playspan_product_subscription_id_1],
+      :playspan_product_subscription_id_2 => node[:mwt_portal][:playspan_product_subscription_id_2],
+      :playspan_product_subscription_id_3 => node[:mwt_portal][:playspan_product_subscription_id_3],
       :playspan_scrap_code => node[:mwt_portal][:playspan_scrap_code],
       :playspan_cbills_code => node[:mwt_portal][:playspan_cbills_code],
       :google_analytics_account => node[:mwt_portal][:google_analytics_account],
@@ -136,7 +144,8 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :zendesk_account_id => node[:mwt_portal][:zendesk_account_id],
       :zendesk_user_account => node[:mwt_portal][:zendesk_user_account],
       :zendesk_user_password => node[:mwt_portal][:zendesk_user_password],
-      :zendesk_field_id => node[:mwt_portal][:zendesk_field_id]
+      :zendesk_field_id => node[:mwt_portal][:zendesk_field_id],
+      :zendesk_field_id_for_portal_user => node[:mwt_portal][:zendesk_field_id_for_portal_user]
   )
 end
 

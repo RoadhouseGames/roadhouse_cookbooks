@@ -10,7 +10,7 @@ $REGISTRY->path->base = realpath(dirname(dirname(dirname(__FILE__))));
 # Application
 ####################################################
 # Show exception stack trace and request variable.
-$REGISTRY->app->debug_mode = FALSE;  #ghornmoen
+$REGISTRY->app->debug_mode = <%= @debug_mode_enabled %>;
 # Web application contact email.
 $REGISTRY->app->contact_email = '<%= @email_contact_account %>';
 # Web application sender email
@@ -20,19 +20,17 @@ $REGISTRY->app->vibrant_email = 'vibrant-sysadmin@vibrant-software.com';
 # Email exception to $REGISTRY->app->vibrant_email
 $REGISTRY->app->email_exceptions = TRUE;
 $REGISTRY->app->domain_name = '<%= @domain %>';
-$REGISTRY->app->cdn_http_host = '<%= @cdn_asset_fqdn %>';   // should be same as host in site_asset_url, user_asset_url
-$REGISTRY->app->cdn_https_host = '<%= @cdn_asset_fqdn_secure %>';
-$REGISTRY->app->site_asset_url = NULL;                 // no assets have been uploaded for this host
-$REGISTRY->app->user_asset_url = 'http://' . $REGISTRY->app->cdn_http_host . '<%= @cdn_asset_base_folder %>';
+$REGISTRY->app->site_asset_url = 'http://<%= @cdn_site_url %>';
+$REGISTRY->app->user_asset_url = 'http://<%= @cdn_user_url %>';
 
 $REGISTRY->app->force_https = FALSE;
-$REGISTRY->app->force_no_www = TRUE;
+$REGISTRY->app->force_no_www = FALSE;
 $REGISTRY->app->is_beta = TRUE; # is the app in beta mode?
 $REGISTRY->app->accept_beta_key = TRUE; # accept beta key?
 $REGISTRY->app->hide_featured = FALSE;
 $REGISTRY->app->incorrect_login_threshold = 5;
 $REGISTRY->app->google_analytics_acct = '<%= @google_analytics_account %>';
-$REGISTRY->app->allow_coupons = TRUE; #ghornmoen
+$REGISTRY->app->allow_coupons = <%=  @allow_coupons_enabled %>;
 $REGISTRY->app->disable_unity = FALSE;
 
 ####################################################
@@ -46,8 +44,8 @@ $REGISTRY->memcached->enable_logging = FALSE;   // turn off when done testing
 ####################################################
 # Portal API
 ####################################################
-$REGISTRY->app->enable_portal_api = TRUE; #ghornmoen
-$REGISTRY->app->portal_api_logging = TRUE;
+$REGISTRY->app->enable_portal_api = TRUE;
+$REGISTRY->app->portal_api_logging = <%= @api_logging_enabled %>;
 $REGISTRY->app->skip_api_signature = TRUE;
 
 ####################################################
@@ -101,7 +99,7 @@ $REGISTRY->mailchimp->newsletter_list_id = '<%= @mail_chimp_news_id %>';
 ####################################################
 $REGISTRY->playspan->log_api = true;
 $REGISTRY->playspan->enable_test_drivers = false;
-$REGISTRY->playspan->enable_upay_lightbox = true;
+$REGISTRY->playspan->enable_upay_lightbox = <%= @playspan_upay_lightbox_enabled %>;
 $REGISTRY->playspan->sig_version = '1';
 $REGISTRY->playspan->access_id = '<%= @playspan_access_id %>';
 $REGISTRY->playspan->store_id = '<%= @playspan_store_id %>';
@@ -109,17 +107,17 @@ $REGISTRY->playspan->partner = '<%= @playspan_store_id %>';
 $REGISTRY->playspan->vendor = '<%= @playspan_store_id %>';
 $REGISTRY->playspan->catalog = '<%= @playspan_catalog %>';
 $REGISTRY->playspan->merchant_key = '<%= @playspan_merchant_key %>';
-$REGISTRY->playspan->admin_pwd = '<%= @playspan_password %>';
-$REGISTRY->playspan->api_url = 'https://demo1.playspan.com/ps-primary-api/store/' . $REGISTRY->playspan->store_id . '/';
-$REGISTRY->playspan->login_id_prefix = '<%= @playspan_user_account_prefix %>'; // will be prepended to user_id to form the playspan_login_id (use your own concatenating character)
+$REGISTRY->playspan->admin_pwd = '<%= @playspan_admin_password %>';
+$REGISTRY->playspan->api_url = 'https://<%= @playspan_url_prefix %>' . $REGISTRY->playspan->store_id . '/';
+$REGISTRY->playspan->login_id_prefix = '<%= @playspan_login_id_prefix %>'; // will be prepended to user_id to form the playspan_login_id (use your own concatenating character)
 $REGISTRY->playspan->scraps_code = '<%= @playspan_scrap_code %>';
 $REGISTRY->playspan->cbills_code = '<%= @playspan_cbills_code %>';
 $REGISTRY->playspan->cbills_category_id = 1;
 $REGISTRY->playspan->enable_subscriptions = false;
 $REGISTRY->playspan->featured_subscription = '<%= @playspan_featured_sub %>';
-$REGISTRY->playspan->subscription_product_id_1 = '<%= @playspan_product_id_prefix %>1'; #ghornmoen - account 1-3
-$REGISTRY->playspan->subscription_product_id_2 = '<%= @playspan_product_id_prefix %>2'; #ghornmoen
-$REGISTRY->playspan->subscription_product_id_3 = '<%= @playspan_product_id_prefix %>3'; #ghornmoen
+$REGISTRY->playspan->subscription_product_id_1 = '<%= @playspan_product_subscription_id_1 %>';
+$REGISTRY->playspan->subscription_product_id_2 = '<%= @playspan_product_subscription_id_2 %>';
+$REGISTRY->playspan->subscription_product_id_3 = '<%= @playspan_product_subscription_id_3 %>';
 $REGISTRY->playspan->enable_premiums = false;
 $REGISTRY->playspan->enable_boosts = false;
 
@@ -135,6 +133,7 @@ $REGISTRY->zendesk->account = '<%= @zendesk_account_id %>';
 $REGISTRY->zendesk->username = '<%= @zendesk_user_account %>';
 $REGISTRY->zendesk->password = '<%= @zendesk_user_password %>';
 $REGISTRY->zendesk->custom_field_id = '<%= @zendesk_field_id %>';
+$REGISTRY->zendesk->custom_field_id_for_portal_user_id = '<%= @zendesk_field_id_for_portal_user %>';
 
 ####################################################
 # Amazon Web Services
@@ -146,7 +145,7 @@ $REGISTRY->amazon->enable_ses = true;
 ####################################################
 # Invision Power Board
 ####################################################
-$REGISTRY->ipb->create_as_beta_member = TRUE;
+$REGISTRY->ipb->create_as_beta_member = FALSE;
 $REGISTRY->ipb->beta_member_group_id = 7;
 
 ####################################################
@@ -157,6 +156,7 @@ $REGISTRY->akamai->ccuapi = 'https://ccuapi.akamai.com/ccuapi-axis.wsdl';
 $REGISTRY->akamai->username = '<%= @cdn_asset_user_account %>';
 $REGISTRY->akamai->password = '<%= @cdn_asset_user_password %>';
 $REGISTRY->akamai->notifications_email = '';
+$REGISTRY->akamai->log_api = <%= cdn_log_api_enabled %>;
 $REGISTRY->akamai->net_storage_host = '<%= @cdn_storage_fqdn %>';
 $REGISTRY->akamai->net_storage_username = '<%= @cdn_storage_user_account %>';
 $REGISTRY->akamai->net_storage_password = '<%= @cdn_storage_user_password %>';
@@ -173,7 +173,7 @@ $REGISTRY->session->remember_me_cookie_lifetime = 60 * 60 * 24 * 14; # 14 days
 ####################################################
 # Admin Config
 ####################################################
-$REGISTRY->admin->disable_grant_offer = FALSE;
+$REGISTRY->admin->disable_grant_offer = <%= @grant_offer_disabled %>;
 
 # optional. bootstrap file will look for $REGISTRY->db->readOnly->host.
 # if set, $REGISTRY->db->readOnly->adapter will be configured with the settings provided

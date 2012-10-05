@@ -18,6 +18,34 @@ attribute "mwt_portal",
           :display_name => "MWT Portal Settings",
           :type => "hash"
 
+attribute "mwt_portal/debug_mode_enabled",
+          :display_name => "Deploy Mode Enabled",
+          :description => "Should the portal be put into debug mode? TRUE or FALSE.",
+          :required => "recommended",
+          :default => "FALSE",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/api_logging_enabled",
+          :display_name => "API Logging Enabled",
+          :description => "Enable API Logging? TRUE or FALSE.",
+          :required => "recommended",
+          :default => "FALSE",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/allow_coupons_enabled",
+          :display_name => "Allow Coupons Enabled",
+          :description => "Allow coupons? TRUE or FALSE.",
+          :required => "recommended",
+          :default => "FALSE",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/grant_offer_disabled",
+          :display_name => "Grant Offers Disabled",
+          :description => "Disable Grant Offers? TRUE or FALSE.",
+          :required => "recommended",
+          :default => "TRUE",
+          :recipes => ["mwt_portal::default"]
+
 attribute "mwt_portal/domain",
           :display_name => "Domain",
           :description => "The domain for the portal. Example: 'mwtactics.com' or 'staging.mwtactics.com'.",
@@ -54,7 +82,7 @@ attribute "mwt_portal/game_require_beta_key",
 
 attribute "mwt_portal/game_shared_secret",
           :display_name => "Game Shared Secret",
-          :description => "A secret key that the portal passes to the game server for validation.  Example 'cred:GAME_SECRET_KEY'.",
+          :description => "A secret key that the portal passes to the game server for validation.  Example 'cred:GAME_SECRET_KEY_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
@@ -114,19 +142,19 @@ attribute "mwt_portal/email_smtp_password",
 
 attribute "mwt_portal/mail_chimp_key",
           :display_name => "Mail Chimp Key",
-          :description => "The Mail Chimp API Key.  Example: 'cred:MAILCHIMP_KEY'.",
+          :description => "The Mail Chimp API Key.  Example: 'cred:MAILCHIMP_KEY_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/mail_chimp_reg_id",
           :display_name => "Mail Chimp Registration List ID",
-          :description => "The Mail Chimp Registration List ID.  Example: 'cred:MAILCHIMP_REG_ID'.",
+          :description => "The Mail Chimp Registration List ID.  Example: 'cred:MAILCHIMP_REG_ID_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/mail_chimp_news_id",
           :display_name => "Mail Chimp Newsletter List ID",
-          :description => "The Mail Chimp Newsletter List ID.  Example: 'cred:MAILCHIMP_NEWS_ID'.",
+          :description => "The Mail Chimp Newsletter List ID.  Example: 'cred:MAILCHIMP_NEWS_ID_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
@@ -142,18 +170,18 @@ attribute "mwt_portal/aws_secret_key",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_asset_fqdn",
-          :display_name => "CDN Asset Fully Qualified Domain Name",
-          :description => "The CDN host fully qualified domain name. Example: 'cdn.mwtactics.com'.",
+attribute "mwt_portal/cdn_site_url",
+          :display_name => "CDN Site URL",
+          :description => "The CDN URL for site assets. Example: 'cdn.mwtactics.com/portal/cb1.2012.08.14' or 'cdn.mwtactics.com/portal_vs/staging'.",
           :required => "recommended",
-          :default => "cdn.mwtactics.com",
+          :default => "cdn.mwtactics.com/portal/cb1.2012.08.14",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/cdn_asset_fqdn_secure",
-          :display_name => "CDN Asset Secure HTTP Fully Qualified Domain Name",
-          :description => "The CDN host fully qualified domain name. Example: 'securecdn.mwtactics.com'.",
+attribute "mwt_portal/cdn_user_url",
+          :display_name => "CDN USer URL",
+          :description => "The CDN URL for user assets (e.g. game team media). Example: 'http://cdn.mwtactics.com/portal' or 'cdn.mwtactics.com/portal_vs/staging'.",
           :required => "recommended",
-          :default => "securecdn.mwtactics.com",
+          :default => "http://cdn.mwtactics.com/portal",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/cdn_asset_user_account",
@@ -166,13 +194,6 @@ attribute "mwt_portal/cdn_asset_user_password",
           :display_name => "CDN Asset User Password",
           :description => "The CDN user account password.  Example: 'cred:CDN_ASSET_PASSWORD'.",
           :required => "required",
-          :recipes => ["mwt_portal::default"]
-
-attribute "mwt_portal/cdn_asset_base_folder",
-          :display_name => "CDN Asset Base Folder",
-          :description => "The CDN asset folder.  This is combined to create the CDN download URL.  Example: '/portal_vs/mwt'.",
-          :required => "recommended",
-          :default => "/portal_vs/mwt",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/cdn_storage_fqdn",
@@ -196,44 +217,64 @@ attribute "mwt_portal/cdn_storage_user_password",
 
 attribute "mwt_portal/cdn_storage_base_folder",
           :display_name => "CDN Storage Base Folder",
-          :description => "The CDN storage asset folder.  Example: '/167367/portal_vs/mwt'.",
+          :description => "The CDN storage asset folder.  Example: '/167367/portal' or '/167367/portal_vs/staging'.",
           :required => "recommended",
-          :default => "/167367/portal_vs/mwt",
+          :default => "/167367/portal",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/cdn_log_api_enabled",
+          :display_name => "CDN Log API",
+          :description => "Log the CDN API?  TRUE or FALSE.",
+          :required => "recommended",
+          :default => "FALSE",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/playspan_url_prefix",
+          :display_name => "Playspan Store URL Prefix",
+          :description => "The Playspan Store URL Prefix.  Example: 'mall2-api.playspan.com/ps-primary-api/store/' or 'demo1.playspan.com/ps-primary-api/store/' in dev.",
+          :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_access_id",
           :display_name => "Playspan Access ID",
-          :description => "The Playspan Access ID.  Example: 'cred:PLAYSPAN_ACCESS_ID'.",
+          :description => "The Playspan Access ID.  Example: 'cred:PLAYSPAN_ACCESS_ID_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_store_id",
           :display_name => "Playspan Store ID",
-          :description => "The Playspan Store ID.  Example: 'cred:PLAYSPAN_STORE_ID'.",
+          :description => "The Playspan Store ID.  Example: 'cred:PLAYSPAN_STORE_ID_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_merchant_key",
           :display_name => "Playspan Merchant Key",
-          :description => "The Playspan merchant key.  Example: 'cred:PLAYSPAN_MERCHANT_KEY'.",
+          :description => "The Playspan merchant key.  Example: 'cred:PLAYSPAN_MERCHANT_KEY_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/playspan_password",
-          :display_name => "Playspan Password",
-          :description => "The Playspan password.  Example: 'cred:PLAYSPAN_PASSWORD'.",
+attribute "mwt_portal/playspan_admin_password",
+          :display_name => "Playspan Admin Password",
+          :description => "The Playspan password.  Example: '' in Live or 'cred:PLAYSPAN_ADMIN_PASSWORD_DEV' in dev.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/playspan_user_account_prefix",
-          :display_name => "Playspan User Account Prefix",
-          :description => "The prefix to apply to all user login IDs.  Example: 'cred:PLAYSPAN_ACCOUNT_PREFIX'.",
+attribute "mwt_portal/playspan_upay_lightbox_enabled",
+          :display_name => "Playspan Upay Lightbox Enabled",
+          :description => "Enable Upay Lightbox?  TRUE or FALSE.",
+          :required => "recommended",
+          :default => "FALSE",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/playspan_login_id_prefix",
+          :display_name => "Playspan Login ID Prefix",
+          :description => "The prefix to apply to all login IDs.  Example: 'cred:PLAYSPAN_LOGIN_ID_PREFIX_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_catalog",
           :display_name => "Playspan Catalog ID",
-          :description => "The Playspan catalog ID.  Example: 'cred:PLAYSPAN_CATALOG_ID'.",
+          :description => "The Playspan catalog ID.  Example: 'cred:PLAYSPAN_CATALOG_ID_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
@@ -251,30 +292,44 @@ attribute "mwt_portal/playspan_featured_sub",
           :default => "testsub001",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/playspan_product_id_prefix",
-          :display_name => "Playspan Product ID",
-          :description => "Playspan product ID prefix.  Example: 'premiumaccount' where you want values premiumaccount1 to premiumaccount3.",
+attribute "mwt_portal/playspan_product_subscription_id_1",
+          :display_name => "Playspan Product Subscription ID 1",
+          :description => "Playspan product subscription ID 1.  Example: 'testsub001' or 'premiumaccount1'.",
           :required => "recommended",
-          :default => "premiumaccount",
+          :default => "testsub001",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/playspan_product_subscription_id_2",
+          :display_name => "Playspan Product Subscription ID 2",
+          :description => "Playspan product subscription ID 2.  Example: '' or 'premiumaccount2'.",
+          :required => "recommended",
+          :default => "",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/playspan_product_subscription_id_3",
+          :display_name => "Playspan Product Subscription ID 3",
+          :description => "Playspan product subscription ID 3.  Example: '' or 'premiumaccount3'.",
+          :required => "recommended",
+          :default => "",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_scrap_code",
           :display_name => "Playspan Scrap Code",
-          :description => "The Playspan code for the 'Scrap' currency.  Example: 'cred:PLAYSPAN_SCRAP_CODE'.",
+          :description => "The Playspan code for the 'Scrap' currency.  Example: 'XPTEE' or 'XPTS2' in dev.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_cbills_code",
           :display_name => "Playspan CBills Code",
-          :description => "The Playspan code for the 'CBills' currency.  Example: 'cred:PLAYSPAN_CBILLS_CODE'.",
+          :description => "The Playspan code for the 'CBills' currency.  Example: 'XPTCB'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/google_analytics_account",
           :display_name => "Google Analytics Account",
-          :description => "The Google Analytics Account ID. Example: '' in Dev or 'UA-28605391-1' in Live.",
+          :description => "The Google Analytics Account ID. Example: 'cred:GOOGLE_ACCOUNT_ID_LIVE' or '' in dev.",
           :required => "recommended",
-          :default => "UA-28605391-1",
+          :default => "",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/web_purify_key",
@@ -285,24 +340,30 @@ attribute "mwt_portal/web_purify_key",
 
 attribute "mwt_portal/zendesk_account_id",
           :display_name => "Zendesk Account ID",
-          :description => "The Zendesk account ID to use. Example: 'cred:ZENDESK_ACCOUNT_ID'.",
+          :description => "The Zendesk account ID to use. Example: 'cred:ZENDESK_ACCOUNT_ID_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/zendesk_user_account",
           :display_name => "Zendesk User Account",
-          :description => "The Zendesk user to use. Example: 'cred:ZENDESK_USER'.",
+          :description => "The Zendesk user to use. Example: 'cred:ZENDESK_USER_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/zendesk_user_password",
           :display_name => "Zendesk User Password",
-          :description => "The Zendesk password to use. Example: 'cred:ZENDESK_PASSWORD'.",
+          :description => "The Zendesk password to use. Example: 'cred:ZENDESK_PASSWORD_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/zendesk_field_id",
           :display_name => "Zendesk Field ID",
-          :description => "The Zendesk field ID to use. Example: 'cred:ZENDESK_FIELD_ID'.",
+          :description => "The Zendesk field ID to use. Example: 'cred:ZENDESK_FIELD_ID_LIVE'.",
+          :required => "required",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/zendesk_field_id_for_portal_user",
+          :display_name => "Zendesk Field ID For Portal User",
+          :description => "The Zendesk field ID for portal user. Example: 'cred:ZENDESK_FIELD_ID_FOR_PORTAL_USER_LIVE' or '' in dev.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
