@@ -152,6 +152,7 @@ end
 log "  Rebuilding Forum Cache"
 bash "rebuild_forum_cache" do
   code <<-EOH
+    /usr/bin/php /home/webapps/mwtactics/application/services/commandline.php "Cache" "refresh-ipb-core"
     /usr/bin/php /home/webapps/mwtactics/application/services/commandline.php "Cache" "refresh-ipb-template-and-css"
   EOH
 end
