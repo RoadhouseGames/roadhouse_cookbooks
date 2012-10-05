@@ -47,6 +47,7 @@ $REGISTRY->memcached->enable_logging = FALSE;   // turn off when done testing
 $REGISTRY->app->enable_portal_api = TRUE;
 $REGISTRY->app->portal_api_logging = <%= @api_logging_enabled %>;
 $REGISTRY->app->skip_api_signature = TRUE;
+$REGISTRY->app->api_access_key = '';
 
 ####################################################
 # Sign Up
