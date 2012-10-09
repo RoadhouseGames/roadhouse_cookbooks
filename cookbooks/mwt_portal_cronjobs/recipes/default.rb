@@ -11,11 +11,9 @@ rightscale_marker :begin
 
 # Setup the cron job entries
 
-class Chef::Recipe
-  include RightScale::App::Helper
-end
-
+# Test!
 run_remote_recipe("mwt_portal:playspan_complete_pending_requests")
+
 
 # Run the specified recipe on a single remote app server
 def run_remote_recipe(recipe_name)
