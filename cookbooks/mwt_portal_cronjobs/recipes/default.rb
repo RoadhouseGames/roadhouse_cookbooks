@@ -12,7 +12,7 @@ rightscale_marker :begin
 # Setup the cron job entries
 
 class Chef::Recipe
-  include RightScale::LB::Helper
+  include RightScale::App::Helper
 end
 
 # Get all attached app servers
