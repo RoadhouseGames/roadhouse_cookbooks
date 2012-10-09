@@ -7,7 +7,6 @@ version          "0.0.1"
 
 supports "centos", "~> 5.8"
 
-depends "app"
 depends "rightscale"
 
 recipe "mwt_portal_cronjobs::default", "Runs recipes on remote app servers.  These jobs are configured in cron."
