@@ -9,4 +9,10 @@
 
 rightscale_marker :begin
 
+class Chef::Recipe
+  include RightScale::LB::Helper
+end
+
+# Setup the cron job entries
+
 rightscale_marker :end
