@@ -9,6 +9,10 @@
 
 rightscale_marker :begin
 
+class Chef::Recipe
+  include RightScale::LB::Helper
+end
+
 # Get all attached app servers
 vhosts(node[:lb][:vhost_names]).each do |vhost_name|
 
