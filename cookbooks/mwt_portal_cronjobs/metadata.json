@@ -9,7 +9,6 @@
     "centos": "~> 5.8"
   },
   "dependencies": {
-    "app": ">= 0.0.0",
     "rightscale": ">= 0.0.0"
   },
   "recommendations": {
@@ -27,7 +26,7 @@
   "groupings": {
   },
   "recipes": {
-    "mwt_portal_cronjobs::default": "Runs recipes on remote app servers.  These jobs are configured in cron."
+    "mwt_portal_cronjobs::default": "Runs recipes on remote app servers.  These jobs are scheduled via cron."
   },
   "version": "0.0.1"
 }

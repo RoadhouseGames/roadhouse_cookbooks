@@ -9,5 +9,5 @@ supports "centos", "~> 5.8"
 
 depends "rightscale"
 
-recipe "mwt_portal_cronjobs::default", "Runs recipes on remote app servers.  These jobs are configured in cron."
+recipe "mwt_portal_cronjobs::default", "Runs recipes on remote app servers.  These jobs are scheduled via cron."
 
