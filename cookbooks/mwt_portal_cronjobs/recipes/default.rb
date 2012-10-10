@@ -13,7 +13,7 @@ rightscale_marker :begin
 
 log "Creating remote Playspan entry"
 REMOTE_PLAYSPAN_INTERVAL = node[:mwt_portal_cronjobs][:remote_playspan_complete_pending_requests_interval]
-if REMOTE_PLAYSPAN_INTERVAL > 0
+if #{REMOTE_PLAYSPAN_INTERVAL} > 0
   cron "MWT Cron for Remote Playspan Complete Pending Requests" do
     minute #{REMOTE_PLAYSPAN_INTERVAL}
     user "root"
@@ -24,7 +24,7 @@ end
 
 log "Creating remote user log cleanup entry"
 REMOTE_USER_CLEAN_UP_INTERVAL = node[:mwt_portal_cronjobs][:remote_user_log_cleanup_interval]
-if REMOTE_USER_CLEAN_UP_INTERVAL  > 0
+if #{REMOTE_USER_CLEAN_UP_INTERVAL} > 0
   cron "MWT Cron for Remote User Log Cleanup Requests" do
     month #{REMOTE_USER_CLEAN_UP_INTERVAL}
     user "root"
