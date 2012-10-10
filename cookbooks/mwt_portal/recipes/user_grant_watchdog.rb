@@ -11,7 +11,7 @@ rightscale_marker :begin
 
 SERVICES_FOLDER = node[:app][:root] + "/application/services"
 
-log "  Executing User Grant Watchdog Script"
+log "Executing User Grant Watchdog Script"
 bash "execute_user_grant_watchdog" do
   code <<-EOH
     bash #{SERVICES_FOLDER}/granting/userGrantWatchdog.sh > /dev/null 2>&1

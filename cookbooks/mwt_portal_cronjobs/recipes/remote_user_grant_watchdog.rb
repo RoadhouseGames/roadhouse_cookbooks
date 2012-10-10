@@ -13,6 +13,6 @@ class Chef::Recipe
   include Roadhouse::PortalCronJobs::Remote
 end
 
-run_remote_recipe("mwt_portal:user_grant_watchdog")
+run_remote_recipe("mwt_portal::user_grant_watchdog")
 
 rightscale_marker :end

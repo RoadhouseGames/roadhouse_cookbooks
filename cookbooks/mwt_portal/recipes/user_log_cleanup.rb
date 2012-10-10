@@ -11,7 +11,7 @@ rightscale_marker :begin
 
 SERVICES_FOLDER = node[:app][:root] + "/application/services"
 
-log "  Executing User Log Cleanup Script"
+log "Executing User Log Cleanup Script"
 bash "execute_user_log_cleanup" do
   code <<-EOH
     bash #{SERVICES_FOLDER}/user/userlogCleanup.sh > /dev/null 2>&1

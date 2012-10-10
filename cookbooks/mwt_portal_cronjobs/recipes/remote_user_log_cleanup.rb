@@ -13,6 +13,6 @@ class Chef::Recipe
   include Roadhouse::PortalCronJobs::Remote
 end
 
-run_remote_recipe("mwt_portal:user_log_cleanup")
+run_remote_recipe("mwt_portal::user_log_cleanup")
 
 rightscale_marker :end

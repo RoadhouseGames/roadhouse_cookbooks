@@ -13,6 +13,6 @@ class Chef::Recipe
   include Roadhouse::PortalCronJobs::Remote
 end
 
-run_remote_recipe("mwt_portal:playspan_complete_pending_requests")
+run_remote_recipe("mwt_portal::playspan_complete_pending_requests")
 
 rightscale_marker :end

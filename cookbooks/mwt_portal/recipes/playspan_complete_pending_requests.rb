@@ -11,7 +11,7 @@ rightscale_marker :begin
 
 SERVICES_FOLDER = node[:app][:root] + "/application/services"
 
-log "  Executing Playspan Complete Pending Requests Script"
+log "Executing Playspan Complete Pending Requests Script"
 bash "execute_playspan_complete_pending_requests" do
   code <<-EOH
     bash #{SERVICES_FOLDER}/purchase/completePending.sh > /dev/null 2>&1
