@@ -13,3 +13,21 @@ recipe "mwt_portal_cronjobs::default", "Configures recipes to be remotely execut
 recipe "mwt_portal_cronjobs::remote_playspan_complete_pending_requests", "Remotely execute the Playspan complete pending requests recipe."
 recipe "mwt_portal_cronjobs::remote_user_grant_watchdog", "Remotely execute the user grant watchdog recipe."
 recipe "mwt_portal_cronjobs::remote_user_log_cleanup", "Remotely execute the user log cleanup recipe."
+
+attribute "mwt_portal_cronjobs",
+          :display_name => "MWT Portal Cronjob Settings",
+          :type => "hash"
+
+attribute "mwt_portal_cronjobs/remote_playspan_complete_pending_requests_interval",
+          :display_name => "Remote Playspan Complete Pending Requests Interval",
+          :description => "The time interval (in minutes) to execute the remote Playspan complete pending requests.  0 to disable.",
+          :required => "recommended",
+          :default => "5",
+          :recipes => ["mwt_portal_cronjobs::default"]
+
+attribute "mwt_portal_cronjobs/remote_user_log_cleanup_interval",
+          :display_name => "Remote User Log Cleanup Interval",
+          :description => "The time interval (in months) to execute the remote user log cleanup requests.  0 to disable.",
+          :required => "recommended",
+          :default => "1",
+          :recipes => ["mwt_portal_cronjobs::default"]
