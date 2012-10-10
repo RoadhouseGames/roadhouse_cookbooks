@@ -36,9 +36,9 @@
     },
     "mwt_portal_cronjobs/remote_playspan_complete_pending_requests_interval": {
       "display_name": "Remote Playspan Complete Pending Requests Interval",
-      "description": "The time interval (in minutes) to execute the remote Playspan complete pending requests.  0 to disable.",
+      "description": "The time interval (in minutes) to execute the remote Playspan complete pending requests.",
       "required": "recommended",
-      "default": "5",
+      "default": "*/5",
       "recipes": [
         "mwt_portal_cronjobs::default"
       ],
@@ -50,7 +50,7 @@
     },
     "mwt_portal_cronjobs/remote_user_log_cleanup_interval": {
       "display_name": "Remote User Log Cleanup Interval",
-      "description": "The time interval (in months) to execute the remote user log cleanup requests.  0 to disable.",
+      "description": "The day of the month to execute the remote user log cleanup requests.",
       "required": "recommended",
       "default": "1",
       "recipes": [
