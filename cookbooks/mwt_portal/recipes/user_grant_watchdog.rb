@@ -13,6 +13,7 @@ SERVICES_FOLDER = node[:app][:root] + "/application/services"
 
 log "Executing User Grant Watchdog Script"
 bash "execute_user_grant_watchdog" do
+  cwd SERVICES_FOLDER
   code <<-EOH
     bash #{SERVICES_FOLDER}/granting/userGrantWatchdog.sh > /dev/null 2>&1
   EOH
