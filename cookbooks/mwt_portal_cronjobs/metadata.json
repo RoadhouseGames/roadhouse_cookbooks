@@ -1,6 +1,6 @@
 {
   "name": "mwt_portal_cronjobs",
-  "description": "Configures mwt web portal cron jobs",
+  "description": "Configures MWT web portal remote recipes via cron",
   "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
   "maintainer": "Roadhouse Interactive and Infinite Game Publishing",
   "maintainer_email": "george@roadhouseinteractive.com",
@@ -26,7 +26,10 @@
   "groupings": {
   },
   "recipes": {
-    "mwt_portal_cronjobs::default": "Runs recipes on remote app servers.  These jobs are scheduled via cron."
+    "mwt_portal_cronjobs::default": "Configures recipes to be remotely executed on an app array.  These jobs are scheduled via cron.",
+    "mwt_portal_cronjobs::remote_playspan_complete_pending_requests": "Remotely execute the Playspan complete pending requests recipe.",
+    "mwt_portal_cronjobs::remote_user_grant_watchdog": "Remotely execute the user grant watchdog recipe.",
+    "mwt_portal_cronjobs::remote_user_log_cleanup": "Remotely execute the user log cleanup recipe."
   },
   "version": "0.0.1"
 }
