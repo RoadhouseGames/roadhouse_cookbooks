@@ -63,7 +63,7 @@ $REGISTRY->account->require_nda_to_launch_game = TRUE;
 $REGISTRY->smtp->enable = FALSE;
 $REGISTRY->smtp->ssl = 'ssl';
 $REGISTRY->smtp->auth = 'login';
-$REGISTRY->smtp->username = '<%= @email_smtp_user %>';
+$REGISTRY->smtp->username = '<%= @email_smtp_account %>';
 $REGISTRY->smtp->password = '<%= @email_smtp_password %>';
 $REGISTRY->smtp->port = 465;
 $REGISTRY->smtp->server = 'smtp.gmail.com';

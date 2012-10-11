@@ -128,7 +128,7 @@ attribute "mwt_portal/email_sender_account",
           :default => "noreply@mwtactics.com",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/email_smtp_user",
+attribute "mwt_portal/email_smtp_account",
           :display_name => "EMail SMTP Account",
           :description => "The SMTP account for the portal.  Example 'cred:EMAIL_SMTP_USER'",
           :required => "required",

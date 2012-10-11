@@ -105,7 +105,7 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :db_password => node[:db][:application][:password],
       :email_contact_account => node[:mwt_portal][:email_contact_account],
       :email_sender_account => node[:mwt_portal][:email_sender_account],
-      :email_smtp_user => node[:mwt_portal][:email_smtp_user],
+      :email_smtp_account => node[:mwt_portal][:email_smtp_account],
       :email_smtp_password => node[:mwt_portal][:email_smtp_password],
       :mail_chimp_key => node[:mwt_portal][:mail_chimp_key],
       :mail_chimp_reg_id => node[:mwt_portal][:mail_chimp_reg_id],
