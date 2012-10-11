@@ -130,7 +130,6 @@ attribute "mwt_portal/email_sender_account",
 
 attribute "mwt_portal/email_smtp_account",
           :display_name => "EMail SMTP Account",
-          :description => "The SMTP account for the portal.  Example 'cred:EMAIL_SMTP_USER'",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
@@ -160,13 +159,13 @@ attribute "mwt_portal/mail_chimp_news_id",
 
 attribute "mwt_portal/aws_access_key",
           :display_name => "AWS Access Key",
-          :description => "The AWS access key. Example: 'cred:AWS_ACCESS_KEY'.",
+          :description => "The AWS access key. Example: 'cred:AWS_ACCESS_KEY_ID'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/aws_secret_key",
           :display_name => "AWS Secret Key",
-          :description => "The AWS secret key. Example: 'cred:AWS_SECRET_KEY'.",
+          :description => "The AWS secret key. Example: 'cred:AWS_SECRET_ACCESS_KEY'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
