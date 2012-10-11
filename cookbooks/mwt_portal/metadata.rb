@@ -19,7 +19,7 @@ attribute "mwt_portal",
           :type => "hash"
 
 attribute "mwt_portal/debug_mode_enabled",
-          :display_name => "Deploy Mode Enabled",
+          :display_name => "Debug Mode Enabled",
           :description => "Should the portal be put into debug mode? TRUE or FALSE.",
           :required => "recommended",
           :default => "FALSE",
