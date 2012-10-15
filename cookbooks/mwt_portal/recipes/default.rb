@@ -144,7 +144,7 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
       :zendesk_user_account => node[:mwt_portal][:zendesk_user_account],
       :zendesk_user_password => node[:mwt_portal][:zendesk_user_password],
       :zendesk_field_id => node[:mwt_portal][:zendesk_field_id],
-      :zendesk_field_id_for_portal_user => node[:mwt_portal][:zendesk_field_id_for_portal_user]
+      :zendesk_portal_userfield_id => node[:mwt_portal][:zendesk_portal_userfield_id]
   )
 end
 

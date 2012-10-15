@@ -353,8 +353,8 @@ attribute "mwt_portal/zendesk_field_id",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/zendesk_field_id_for_portal_user",
-          :display_name => "Zendesk Field ID For Portal User",
-          :description => "The Zendesk field ID for portal user. Example: 'cred:ZENDESK_FIELD_ID_FOR_PORTAL_USER_LIVE' or '' in dev.",
+attribute "mwt_portal/zendesk_portal_userfield_id",
+          :display_name => "Zendesk Portal User Field ID",
+          :description => "The Zendesk field ID for portal user. Example: 'cred:ZENDESK_PORTAL_USER_FIELD_ID_LIVE' or '' in dev.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
