@@ -279,41 +279,40 @@ attribute "mwt_portal/playspan_catalog",
 
 attribute "mwt_portal/playspan_featured_sub",
           :display_name => "Playspan Featured Subscription",
-          :description => "Playspan featured subscription.  Example: 'testsub001'",
-          :required => "recommended",
-          :default => "testsub001",
+          :description => "Playspan featured subscription.  Example: 'cred:PLAYSPAN_FEATURED_SUB_LIVE'",
+          :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_product_subscription_id_1",
           :display_name => "Playspan Product Subscription ID 1",
-          :description => "Playspan product subscription ID 1.  Example: 'testsub001' or 'premiumaccount1'.",
+          :description => "Playspan product subscription ID 1.  Example: 'cred:PLAYSPAN_PRODUCT_SUB_ID_1_LIVE'.",
           :required => "recommended",
-          :default => "testsub001",
+          :default => "",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_product_subscription_id_2",
           :display_name => "Playspan Product Subscription ID 2",
-          :description => "Playspan product subscription ID 2.  Example: '' or 'premiumaccount2'.",
+          :description => "Playspan product subscription ID 2.  Example: '' or 'cred:PLAYSPAN_PRODUCT_SUB_ID_2_LIVE'.",
           :required => "recommended",
           :default => "",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_product_subscription_id_3",
           :display_name => "Playspan Product Subscription ID 3",
-          :description => "Playspan product subscription ID 3.  Example: '' or 'premiumaccount3'.",
+          :description => "Playspan product subscription ID 3.  Example: '' or 'cred:PLAYSPAN_PRODUCT_SUB_ID_3_LIVE'.",
           :required => "recommended",
           :default => "",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_scrap_code",
           :display_name => "Playspan Scrap Code",
-          :description => "The Playspan code for the 'Scrap' currency.  Example: 'XPTEE' or 'XPTS2' in dev.",
+          :description => "The Playspan code for the 'Scrap' currency.  Example: 'cred:PLAYSPAN_SCRAP_CODE_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_cbills_code",
           :display_name => "Playspan CBills Code",
-          :description => "The Playspan code for the 'CBills' currency.  Example: 'XPTCB'.",
+          :description => "The Playspan code for the 'CBills' currency.  Example: 'cred:PLAYSPAN_CBILLS_CODE_LIVE'.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
