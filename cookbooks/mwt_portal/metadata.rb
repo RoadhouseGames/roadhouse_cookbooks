@@ -60,7 +60,7 @@ attribute "mwt_portal/game_hostname",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/game_port",
-          :display_name => "Game Port",
+          :display_name => "Game Server Port",
           :description => "The game server port. Example: '80' or '8000'.",
           :required => "recommended",
           :default => "80",
@@ -228,9 +228,9 @@ attribute "mwt_portal/cdn_log_api_enabled",
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
-attribute "mwt_portal/playspan_url_prefix",
-          :display_name => "Playspan Store URL Prefix",
-          :description => "The Playspan Store URL Prefix.  Example: 'mall2-api.playspan.com/ps-primary-api/store/' or 'demo1.playspan.com/ps-primary-api/store/' in dev.",
+attribute "mwt_portal/playspan_api_url",
+          :display_name => "Playspan API URL Prefix",
+          :description => "The Playspan API URL Prefix.  Example: 'mall2-api.playspan.com/ps-primary-api/store/' or 'demo1.playspan.com/ps-primary-api/store/' in dev.",
           :required => "required",
           :recipes => ["mwt_portal::default"]
 
@@ -275,13 +275,6 @@ attribute "mwt_portal/playspan_catalog",
           :display_name => "Playspan Catalog ID",
           :description => "The Playspan catalog ID.  Example: 'cred:PLAYSPAN_CATALOG_ID_LIVE'.",
           :required => "required",
-          :recipes => ["mwt_portal::default"]
-
-attribute "mwt_portal/playspan_upay_lightbox",
-          :display_name => "Playspan Enable UPay Lightbox",
-          :description => "Enable Playspan upay lightbox.  TRUE or FALSE.",
-          :required => "recommended",
-          :default => "TRUE",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/playspan_featured_sub",

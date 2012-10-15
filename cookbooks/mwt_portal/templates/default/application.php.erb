@@ -109,7 +109,7 @@ $REGISTRY->playspan->vendor = '<%= @playspan_store_id %>';
 $REGISTRY->playspan->catalog = '<%= @playspan_catalog %>';
 $REGISTRY->playspan->merchant_key = '<%= @playspan_merchant_key %>';
 $REGISTRY->playspan->admin_pwd = '<%= @playspan_admin_password %>';
-$REGISTRY->playspan->api_url = 'https://<%= @playspan_url_prefix %>' . $REGISTRY->playspan->store_id . '/';
+$REGISTRY->playspan->api_url = 'https://<%= @playspan_api_url %>' . $REGISTRY->playspan->store_id . '/';
 $REGISTRY->playspan->login_id_prefix = '<%= @playspan_login_id_prefix %>'; // will be prepended to user_id to form the playspan_login_id (use your own concatenating character)
 $REGISTRY->playspan->scraps_code = '<%= @playspan_scrap_code %>';
 $REGISTRY->playspan->cbills_code = '<%= @playspan_cbills_code %>';
