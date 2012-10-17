@@ -10,6 +10,7 @@ supports "centos", "~> 5.8"
 depends "rightscale"
 
 recipe "mwt_portal::default", "Configures the MWT web portal."
+recipe "mwt_portal::update_game_client_url", "Change the game client URL."
 recipe "mwt_portal::playspan_complete_pending_requests", "Flush any pending requests to Playspan."
 recipe "mwt_portal::user_log_cleanup", "Cleanup user logs in the database."
 recipe "mwt_portal::user_grant_watchdog", "Check that the user grant process is running."
@@ -68,10 +69,10 @@ attribute "mwt_portal/game_port",
 
 attribute "mwt_portal/game_client_url",
           :display_name => "Game Client URL",
-          :description => "The URL where the game client lives.  Example 'cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.",
+          :description => "The URL where the game client lives.  Example 'cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.  '!' characters are not allowed in the path.",
           :required => "recommended",
           :default => "cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d",
-          :recipes => ["mwt_portal::default"]
+          :recipes => ["mwt_portal::default", "mwt_portal:update_game_client_url"]
 
 attribute "mwt_portal/game_require_beta_key",
           :display_name => "Game Requires Beta Key",

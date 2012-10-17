@@ -76,9 +76,9 @@ template "#{WWW_DOCUMENT_ROOT}/public/forums/conf_global.php" do
 end
 
 log "  Creating '#{WWW_DOCUMENT_ROOT}/application/configs/application.php' file"
-MEMCACHE_ENABLED = TRUE
+MEMCACHE_ENABLED = "TRUE"
 if node[:mwt_portal][:memcache_hostname] == ""
-  MEMCACHE_ENABLED = FALSE
+  MEMCACHE_ENABLED = "FALSE"
 end
 
 template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
