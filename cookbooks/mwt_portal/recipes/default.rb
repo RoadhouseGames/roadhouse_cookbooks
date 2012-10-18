@@ -55,6 +55,7 @@ bash "edit_php_config" do
   code <<-EOH
     sed 's:;date.timezone =:#{FULL_TIME_ZONE_LINE}:' -i php.ini
     sed 's:short_open_tag = Off:short_open_tag = On:' -i php.ini
+    sed 's:allow_url_fopen = Off:allow_url_fopen = On:' -i php.ini
   EOH
 end
 
