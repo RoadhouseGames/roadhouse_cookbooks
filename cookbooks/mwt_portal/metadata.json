@@ -34,6 +34,21 @@
 
       ]
     },
+    "mwt_portal/disable_route_urldecode": {
+      "display_name": "Disable Route URL Decoding",
+      "description": "Disable the routing's embedded URL decoding. Default: TRUE",
+      "required": "recommended",
+      "choice": [
+        "TRUE",
+        "FALSE"
+      ],
+      "default": "TRUE",
+      "recipes": [
+        "mwt_portal::default"
+      ],
+      "calculated": false,
+      "type": "string"
+    },
     "mwt_portal/debug_mode_enabled": {
       "display_name": "Debug Mode Enabled",
       "description": "Should the portal be put into debug mode?",

@@ -19,7 +19,7 @@ attribute "mwt_portal",
           :display_name => "MWT Portal Settings",
           :type => "hash"
 
-attribute "mwt_portal/debug_mode_enabled",
+attribute "mwt_portal/disable_route_urldecode",
           :display_name => "Disable Route URL Decoding",
           :description => "Disable the routing's embedded URL decoding. Default: TRUE",
           :required => "recommended",
