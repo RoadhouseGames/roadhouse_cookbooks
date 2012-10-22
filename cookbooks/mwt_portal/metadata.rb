@@ -20,30 +20,42 @@ attribute "mwt_portal",
           :type => "hash"
 
 attribute "mwt_portal/debug_mode_enabled",
-          :display_name => "Debug Mode Enabled",
-          :description => "Should the portal be put into debug mode? TRUE or FALSE.",
+          :display_name => "Disable Route URL Decoding",
+          :description => "Disable the routing's embedded URL decoding. Default: TRUE",
           :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
+          :default => "TRUE",
+          :recipes => ["mwt_portal::default"]
+
+attribute "mwt_portal/debug_mode_enabled",
+          :display_name => "Debug Mode Enabled",
+          :description => "Should the portal be put into debug mode?",
+          :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/api_logging_enabled",
           :display_name => "API Logging Enabled",
-          :description => "Enable API Logging? TRUE or FALSE.",
+          :description => "Enable API Logging?",
           :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/allow_coupons_enabled",
           :display_name => "Allow Coupons Enabled",
-          :description => "Allow coupons? TRUE or FALSE.",
+          :description => "Allow coupons?",
           :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
 attribute "mwt_portal/grant_offer_disabled",
           :display_name => "Grant Offers Disabled",
-          :description => "Disable Grant Offers? TRUE or FALSE.",
+          :description => "Disable Grant Offers?",
           :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
           :default => "TRUE",
           :recipes => ["mwt_portal::default"]
 
@@ -76,8 +88,9 @@ attribute "mwt_portal/game_client_url",
 
 attribute "mwt_portal/game_require_beta_key",
           :display_name => "Game Requires Beta Key",
-          :description => "Does the game require a beta key to launch?  TRUE or FALSE.",
+          :description => "Does the game require a beta key to launch?",
           :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
@@ -224,8 +237,9 @@ attribute "mwt_portal/cdn_storage_base_folder",
 
 attribute "mwt_portal/cdn_log_api_enabled",
           :display_name => "CDN Log API",
-          :description => "Log the CDN API?  TRUE or FALSE.",
+          :description => "Log the CDN API?",
           :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
@@ -261,8 +275,9 @@ attribute "mwt_portal/playspan_admin_password",
 
 attribute "mwt_portal/playspan_upay_lightbox_enabled",
           :display_name => "Playspan Upay Lightbox Enabled",
-          :description => "Enable Upay Lightbox?  TRUE or FALSE.",
+          :description => "Enable Upay Lightbox?",
           :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 

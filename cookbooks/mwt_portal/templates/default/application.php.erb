@@ -9,6 +9,7 @@ $REGISTRY->path->base = realpath(dirname(dirname(dirname(__FILE__))));
 ####################################################
 # Application
 ####################################################
+$REGISTRY->app->disable_route_urldecode = <%= @disable_route_urldecode %>
 # Show exception stack trace and request variable.
 $REGISTRY->app->debug_mode = <%= @debug_mode_enabled %>;
 # Web application contact email.
