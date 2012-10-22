@@ -90,7 +90,7 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
   owner "root"
   cookbook "mwt_portal"
   variables(
-      :disable_route_urldecode => node[mwt_portal][:disable_route_urldecode],
+      :disable_route_urldecode => node[:mwt_portal][:disable_route_urldecode],
       :debug_mode_enabled => node[:mwt_portal][:debug_mode_enabled],
       :allow_coupons_enabled => node[:mwt_portal][:allow_coupons_enabled],
       :api_logging_enabled => node[:mwt_portal][:api_logging_enabled],
