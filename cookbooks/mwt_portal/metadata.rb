@@ -84,7 +84,7 @@ attribute "mwt_portal/game_client_url",
           :description => "The URL where the game client lives.  Example 'cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d'.  '!' characters are not allowed in the path.",
           :required => "recommended",
           :default => "cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d",
-          :recipes => ["mwt_portal::default", "mwt_portal:update_game_client_url"]
+          :recipes => ["mwt_portal::default", "mwt_portal::update_game_client_url"]
 
 attribute "mwt_portal/game_require_beta_key",
           :display_name => "Game Requires Beta Key",

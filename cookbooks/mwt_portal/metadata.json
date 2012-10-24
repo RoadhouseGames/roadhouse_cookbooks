@@ -157,7 +157,7 @@
       "default": "cdn.mwtactics.com/game_staging/client/b285/unity/MechWarriorTactics/MechWarriorTactics.unity3d",
       "recipes": [
         "mwt_portal::default",
-        "mwt_portal:update_game_client_url"
+        "mwt_portal::update_game_client_url"
       ],
       "choice": [
 
