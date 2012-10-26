@@ -92,6 +92,7 @@ template "#{WWW_DOCUMENT_ROOT}/application/configs/application.php" do
   variables(
       :disable_route_urldecode => node[:mwt_portal][:disable_route_urldecode],
       :debug_mode_enabled => node[:mwt_portal][:debug_mode_enabled],
+      :force_no_www => node[:mwt_portal][:force_no_www],
       :allow_coupons_enabled => node[:mwt_portal][:allow_coupons_enabled],
       :api_logging_enabled => node[:mwt_portal][:api_logging_enabled],
       :grant_offer_disabled => node[:mwt_portal][:grant_offer_disabled],

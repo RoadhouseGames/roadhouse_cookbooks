@@ -35,6 +35,14 @@ attribute "mwt_portal/debug_mode_enabled",
           :default => "FALSE",
           :recipes => ["mwt_portal::default"]
 
+attribute "mwt_portal/force_no_www",
+          :display_name => "Force No WWW",
+          :description => "Whether or not to force the remove of www when users connect to the portal. I.e., connecting to www.mwtactics.com redirects to mwtactics.com. Default: TRUE",
+          :required => "recommended",
+          :choice => ["TRUE", "FALSE"],
+          :default => "TRUE",
+          :recipes => ["mwt_portal::default"]
+
 attribute "mwt_portal/api_logging_enabled",
           :display_name => "API Logging Enabled",
           :description => "Enable API Logging?",

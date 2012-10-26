@@ -25,7 +25,7 @@ $REGISTRY->app->site_asset_url = 'http://<%= @cdn_site_url %>';
 $REGISTRY->app->user_asset_url = 'http://<%= @cdn_user_url %>';
 
 $REGISTRY->app->force_https = FALSE;
-$REGISTRY->app->force_no_www = FALSE;
+$REGISTRY->app->force_no_www = <%= @force_no_www %>;
 $REGISTRY->app->is_beta = TRUE; # is the app in beta mode?
 $REGISTRY->app->accept_beta_key = TRUE; # accept beta key?
 $REGISTRY->app->hide_featured = FALSE;
